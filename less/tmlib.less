@@ -1,0 +1,168 @@
+/*
+ * library
+ */
+#tm {
+  
+  .fontface(@name, @filepath, @filename) {
+    font-family: @name;
+    src: url("@{filepath}/@{filename}.eot");
+    src: url("@{filepath}/@{filename}.eot?#iefix") format("embedded-opentype"),
+         url("@{filepath}/@{filename}.woff") format("woff"),
+         url("@{filepath}/@{filename}.ttf") format("truetype"),
+         url("@{filepath}/@{filename}.svg#fontello") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  .hide {
+    display: none;
+  }
+  
+  .show {
+    display: block;
+  }
+  
+  .visible {
+    visibility: none;
+  }
+  
+  .invisible {
+    visibility: hidden;
+  }
+  
+  .clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+      display: table;
+      content: "";
+    }
+    &:after {
+      clear: both;
+    }
+  }
+  
+  .size(@size) {
+    width: @size;
+    height: @size;
+  }
+  
+  .size(@width, @height) {
+    width: @width;
+    height: @height;
+  }
+  
+  .box-shadow(@value) {
+    -webkit-box-shadow: @value;
+       -moz-box-shadow: @value;
+         -o-box-shadow: @value;
+        -ms-box-shadow: @value;
+            box-shadow: @value;
+  }
+  
+  .box-sizing(@value) {
+    -webkit-box-sizing: @value;
+       -moz-box-sizing: @value;
+         -o-box-sizing: @value;
+        -ms-box-sizing: @value;
+            box-sizing: @value;
+  }
+  
+  .transition(@value) {
+    -webkit-transition: @value;
+       -moz-transition: @value;
+         -o-transition: @value;
+        -ms-transition: @value;
+            transition: @value;
+  }
+  
+  .rotate(@degree) {
+    -webkit-transform: rotate(@degree);
+       -moz-transform: rotate(@degree);
+         -o-transform: rotate(@degree);
+        -ms-transform: rotate(@degree);
+            transform: rotate(@degree);
+  }
+  
+  .scale(@ratio) {
+    -webkit-transform: scale(@ratio);
+       -moz-transform: scale(@ratio);
+         -o-transform: scale(@ratio);
+        -ms-transform: scale(@ratio);
+            transform: scale(@ratio);
+  }
+  
+  .linear-gradient(@args) {
+    background: -webkit-linear-gradient(@arguments);
+    background:    -moz-linear-gradient(@arguments);
+    background:      -o-linear-gradient(@arguments);
+    background:     -ms-linear-gradient(@arguments);
+    background:         linear-gradient(@arguments);
+  }
+  
+  .oily-filter(@color) {
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.2) 100%), @color;
+    background:    -moz-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.2) 100%), @color;
+    background:      -o-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.2) 100%), @color;
+    background:     -ms-linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.2) 100%), @color;
+    background:         linear-gradient(top, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(255, 255, 255, 0.1) 51%, rgba(255, 255, 255, 0.2) 100%), @color;
+  }
+  
+  .prettyprint {
+    padding: 0px;
+    border : 1px solid #888;
+    font-size: 12px;
+    font-family: 'Consolas', 'Monaco', 'ＭＳ ゴシック';
+    overflow: auto;
+    
+    .str { color: #800; }
+    .kwd { color: #00c; }
+    .com { color: #080; }
+    .typ { color: #606; }
+    .lit { color: #066; }
+    .pun { color: #660; }
+    .pln { color: #000; }
+    .tag { color: #008; }
+    .atn { color: #606; }
+    .atv { color: #080; }
+    .dec { color: #606; }
+    
+    ol.linenums {
+      margin-top: 0;
+      margin-bottom: 0;
+      padding: 0px 0px 0px 4em;
+      background-color: rgb(235, 240, 255);
+      line-height: 1em;
+    }
+    
+    li {
+      padding: 2px;
+      padding-left: 5px;
+      
+      &:nth-child(odd) { background: rgb(255, 255, 255); }
+      &:nth-child(even) { background: rgb(250, 250, 250); }
+    }
+    
+    @media print {
+      .str { color: #060; }
+      .kwd { color: #006; font-weight: bold; }
+      .com { color: #600; font-style: italic; }
+      .typ { color: #404; font-weight: bold; }
+      .lit { color: #044; }
+      .pun { color: #440; }
+      .pln { color: #000; }
+      .tag { color: #006; font-weight: bold; }
+      .atn { color: #404; }
+      .atv { color: #060; }
+    }
+
+  }
+}
+
+
+
+
+
+
+
+
