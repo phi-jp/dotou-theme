@@ -3,7 +3,7 @@
   wordpressの機能追加
  */
 
-//!< ウィジェットの追加
+// ウィジェットの追加
 if ( function_exists('register_sidebar') ){
     register_sidebar();
 }
@@ -17,18 +17,22 @@ if( function_exists('register_sidebar') ) {
 	));
 }
 
-//!< アイキャッチをWPに追加
+// アイキャッチをWPに追加
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 400, 225, true );
 
-//!< #more-$id を削除する。
+// カスタムメニューを追加
+add_theme_support( 'menus' );
+
+
+// #more-$id を削除する。
 function custom_content_more_link( $output ) {
     $output = preg_replace('/#more-[\d]+/i', '', $output );
     return $output;
 }
 add_filter( 'the_content_more_link', 'custom_content_more_link' );
 
-//!< ループ時にポストの位置を判定
+// ループ時にポストの位置を判定
 function isFirst(){
     global $wp_query;
     return ($wp_query->current_post === 0);
@@ -49,7 +53,7 @@ function isEvery(){
     return ((($wp_query->current_post+1) % 2) === 0);
 }
 
-//!< ページング
+// ページング
 function pagination($pages = '', $range = 4){
 	$showitems = ($range * 2)+1; 
 	
@@ -87,25 +91,19 @@ function pagination($pages = '', $range = 4){
 	}
 }
 
+
 /* 
-  環境取得
+  ユーザー環境取得
 */
 
-//!< スマホとPCの判別
+// スマホの判定
 function is_mobile(){
 	$useragents = array(
-		'iPhone', // Apple iPhone
-		'iPod', // Apple iPod touch
-		'Android', // 1.5+ Android
-		'dream', // Pre 1.5 Android
-		'CUPCAKE', // 1.5+ Android
-		'blackberry9500', // Storm
-		'blackberry9530', // Storm
-		'blackberry9520', // Storm v2
-		'blackberry9550', // Storm v2
-		'blackberry9800', // Torch
+		'iPhone',           // Apple iPhone
+		'iPod',             // Apple iPod touch
+        'incognito', // Other iPhone browser
+		'Android',          // 1.5+ Android
 		'webOS', // Palm Pre Experimental
-		'incognito', // Other iPhone browser
 		'webmate' // Other iPhone browser
 	);
 	
@@ -113,7 +111,7 @@ function is_mobile(){
 	return preg_match($pattern, $_SERVER['HTTP_USER_AGENT']);
 }
 
-//!< ブラウザタイプを判別
+// ブラウザタイプを判別
 function getBrowser(){
 	$agent = getenv("HTTP_USER_AGENT");
 	$brws = "";
