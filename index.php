@@ -19,7 +19,7 @@
             <h1 class="postTitle"><?php echo $title; ?></h1>
         </header>
         <div class="post">
-            <div class="postContent"><?php the_content(); ?></div>
+            <div class="content"><?php the_content(); ?></div>
         </div>
     </article>
     <?php endwhile; endif; ?>
