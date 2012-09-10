@@ -14,14 +14,14 @@
         $link = get_permalink();
         $date = get_the_time('Y/m/d');
     ?>
-    <section class="entry">
+    <article class="entry">
         <header class="postHeader">
             <h1 class="postTitle"><?php echo $title; ?></h1>
         </header>
         <div class="post">
             <div class="postContent"><?php the_content(); ?></div>
         </div>
-    </section>
+    </article>
     <?php endwhile; endif; ?>
 </div>
 <?php get_footer(); ?>
