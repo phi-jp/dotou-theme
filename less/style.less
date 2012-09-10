@@ -78,8 +78,19 @@ body {
 #footer{
   padding: 10px;
   background-color: @footer-background-color;
+  text-align: center;
+  .footerNav{
+    ul{
+      li{
+        display: inline;
+        margin-right: 15px;
+        a{
+          color: @footer-link-color;
+        }
+      }
+    }
+  }
   address{
     color: @footer-font-color;
-    text-align: center;
   }
 }
