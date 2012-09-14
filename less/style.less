@@ -104,7 +104,7 @@ body {
   margin: 0 auto;
   padding: 50px 0;
   .entry{
-    padding: 0px 20px 50px 20px;
+    padding: 0px 0px 50px 0px;
     .post_header{
       .post_title{
         margin-bottom: 25px;
@@ -139,6 +139,7 @@ body {
 /* home */
 .home{
   #contents{
+    /* main blanding */
     .blanding{
       margin-bottom: 30px;
       .slide{
@@ -160,6 +161,7 @@ body {
         }
       }
     }
+    /* content list */
     .content_list{
       width: 100%;
       ul{
@@ -191,6 +193,7 @@ body {
   #contents{
     width: @single-width;
     .main_content{
+      /* sinle content */
       .content{
         float: left;
         width: 480px;
@@ -198,6 +201,44 @@ body {
       .code_box{
         float: right;
         width: 465px;
+      }
+
+      /* single post navigation */
+      .lesson_nav{
+        .single_nav{
+          ul{
+            .prev_post{
+            }
+            .next_post{
+              text-align: right;
+            }
+          }
+        }
+        .list_nav{
+          width: 100%;
+          margin: 0 auto;
+          dl{
+            float: left;
+            width: 33.333%;
+            text-align: center;
+            dt{
+              background-color: #333;
+              border-right: 1px solid #999;
+              color: #EEE;
+            }
+            dd{
+              border-bottom: 1px solid #EEE;
+              border-right: 1px solid #EEE;
+              padding-bottom: 3px;
+              margin-bottom: 3px;
+            }
+            &:last-child{
+              dt,dd{
+                border-right: none;
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -211,6 +252,7 @@ body {
       width: 80%;
       float: right;
     }
+    /* sidebar */
     aside{
       width: 15%;
       float: left;

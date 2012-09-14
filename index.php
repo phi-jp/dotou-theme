@@ -26,7 +26,37 @@
                 </div>
             </div>
         </article>
-    <?php endwhile; endif; ?>
+    <?php endwhile; endif;
+    if (is_single()) { ?>
+        <div class="lesson_nav">
+            <nav class="single_nav">
+                <ul class="cf">
+                    <li class="prev_post">← Previous <?php previous_post_link('%link'); ?></li>
+                    <li class="next_post"><?php next_post_link('%link'); ?> Next → </li>
+                </ul>
+            </nav>
+            <nav class="list_nav cf">
+                <dl>
+                    <dt>試練</dt>
+                    <dd><a href="">part01</a></dd>
+                    <dd><a href="">part02</a></dd>
+                    <dd><a href="">part03</a></dd>
+                </dl>
+                <dl>
+                    <dt>修練</dt>
+                    <dd><a href="">part01</a></dd>
+                    <dd><a href="">part02</a></dd>
+                    <dd><a href="">part03</a></dd>
+                </dl>
+                <dl>
+                    <dt>鍛錬</dt>
+                    <dd><a href="">part01</a></dd>
+                    <dd><a href="">part02</a></dd>
+                    <dd><a href="">part03</a></dd>
+                </dl>
+            </nav>
+        </div>
+    <?php } ?>
     </div>
     <?php
     if (is_page()) {
