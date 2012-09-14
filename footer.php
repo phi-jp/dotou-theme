@@ -1,5 +1,5 @@
 <footer id="footer">
-    <nav class="footerNav">
+    <nav class="footer_nav">
         <ul class="cf">
             <?php wp_list_pages('title_li='); ?>
         </ul>

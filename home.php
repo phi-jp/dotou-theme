@@ -16,7 +16,7 @@
             </ul>
         </div>
     </div>
-    <div class="contentList">
+    <div class="content_list">
         <ul class="cf">
             <li><a href="">試練</a></li>
             <li><a href="">修練</a></li>
