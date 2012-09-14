@@ -31,8 +31,8 @@
         <div class="lesson_nav">
             <nav class="single_nav">
                 <ul class="cf">
-                    <li class="prev_post">← Previous <?php previous_post_link('%link'); ?></li>
-                    <li class="next_post"><?php next_post_link('%link'); ?> Next → </li>
+                    <li class="prev_post"><?php previous_post_link('← Previous %link'); ?></li>
+                    <li class="next_post"><?php next_post_link( '%link Next →' ); ?></li>
                 </ul>
             </nav>
             <nav class="list_nav cf">
