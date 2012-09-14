@@ -6,9 +6,7 @@
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/font/fontello/css/fontello.css" />
 
-<style>
-    @import url("<?php bloginfo('stylesheet_url'); ?>");
-</style>
+<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 <script>
