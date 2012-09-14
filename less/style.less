@@ -11,6 +11,7 @@
  * constant
  */
 @page-width: 1100px;
+@single-width: 960px;
 
 
 /*
@@ -49,7 +50,6 @@ body {
  */
 #header{
   height: 55px;
-  margin-bottom: 50px;
   background-color: #333;
   padding: 0px;
   position: relative;
@@ -102,6 +102,7 @@ body {
 #contents{
   width: @page-width;
   margin: 0 auto;
+  padding: 50px 0;
   .entry{
     padding: 0px 20px 50px 20px;
     margin-bottom: 50px;
@@ -140,7 +141,6 @@ body {
 /* home */
 .home{
   #contents{
-    margin-bottom: 50px;
     .blanding{
       margin-bottom: 30px;
       .slide{
@@ -165,6 +165,35 @@ body {
             margin-right: 0;
           }
         }
+      }
+    }
+  }
+}
+
+/* single  */
+.single{
+  #contents{
+    width: @single-width;
+    .main_content{
+    }
+  }
+}
+
+/* page */
+.page{
+  #contents{
+    height: 100%;
+    .main_content{
+      width: 80%;
+      float: right;
+    }
+    aside{
+      width: 15%;
+      float: left;
+      color: #EEE;
+      background-color: @footer-background-color;
+      a{
+        color: @aside-link-color;
       }
     }
   }

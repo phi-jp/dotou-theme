@@ -5,10 +5,10 @@
     <?php get_template_part('head'); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <?php get_header(); ?>
-<div id="contents">
-    <div class="main_content">
+<div id="contents" class="cf">
+    <div class="main_content cf">
     <?php
     if(have_posts()): while(have_posts()):the_post();
         $title = get_the_title();
@@ -25,6 +25,11 @@
         </article>
     <?php endwhile; endif; ?>
     </div>
+    <?php
+    if (is_page()) {
+        get_sidebar();
+    }
+    ?>
 </div>
 <?php get_footer(); ?>
 
