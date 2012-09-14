@@ -11,7 +11,8 @@
     <div class="blanding">
         <div class="slide">
             <ul>
-                <li><a href="">slide01</a></li>
+                <li><a href="">怒涛とは！？</a></li>
+                <li><a href="">jsdo.itとコラボ！</a></li>
             </ul>
         </div>
     </div>
