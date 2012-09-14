@@ -19,8 +19,11 @@
             <header class="post_header">
                 <h1 class="post_title"><?php echo $title; ?></h1>
             </header>
-            <div class="post">
+            <div class="post cf">
                 <div class="content"><?php the_content(); ?></div>
+                <div class="code_box">
+                    <?php echo get_post_meta($post->ID, 'jsdoit', true); ?>
+                </div>
             </div>
         </article>
     <?php endwhile; endif; ?>
