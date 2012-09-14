@@ -27,7 +27,7 @@ html{
   font-size: @font-size;
 }
 body {
-  background-color: #EFEFEF;
+  background-color: #FFF;
 
   font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
   line-height: 1.5em;
@@ -134,5 +134,41 @@ body {
   }
   address{
     color: @footer-font-color;
+  }
+}
+
+/* home */
+.home{
+  #contents{
+    margin-bottom: 50px;
+    .blanding{
+      margin-bottom: 30px;
+      .slide{
+        background-color: #ccc;
+        height: 300px;
+        #tm .radius(8px);
+      }
+    }
+    .contentList{
+      width: 100%;
+      ul{
+        padding: 0 0.5%;
+        li{
+          width: 32%;
+          height: 200px;
+          display: block;
+          float: left;
+          margin-right: 2%;
+          background-color: #ccc;
+          #tm .radius(8px);
+          &:first-child{
+
+          }
+          &:last-child{
+            margin-right: 0;
+          }
+        }
+      }
+    }
   }
 }

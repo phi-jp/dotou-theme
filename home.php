@@ -5,7 +5,7 @@
     <?php get_template_part('head'); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?>>
 <?php get_header(); ?>
 <div id="contents">
     <div class="blanding">
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="contentList">
-        <ul>
+        <ul class="cf">
             <li><a href="">試練</a></li>
             <li><a href="">修練</a></li>
             <li><a href="">鍛錬</a></li>
