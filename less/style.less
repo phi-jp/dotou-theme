@@ -144,9 +144,22 @@ body {
     .blanding{
       margin-bottom: 30px;
       .slide{
-        background-color: #ccc;
-        height: 300px;
+        background-color: #efefef;
         #tm .radius(8px);
+        ul{
+          li{
+            height: 300px;
+            display: none;
+            a{
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+            &:first-child{
+              display: block;
+            }
+          }
+        }
       }
     }
     .content_list{
@@ -159,10 +172,15 @@ body {
           display: block;
           float: left;
           margin-right: 2%;
-          background-color: #ccc;
+          background-color: #efefef;
           #tm .radius(8px);
           &:last-child{
             margin-right: 0;
+          }
+          a{
+            display: block;
+            width: 100%;
+            height: 100%;
           }
         }
       }
