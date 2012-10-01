@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
     <head>
         <?php get_template_part('head'); ?>

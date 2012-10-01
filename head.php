@@ -36,7 +36,7 @@
 
 <!--[if IE]>
 <style>
-    @import url("<?php bloginfo('template_url'); ?>/ie-style.css");
+  @import url("<?php bloginfo('template_url'); ?>/ie-style.css");
 </style>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
