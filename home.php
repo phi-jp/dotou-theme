@@ -16,18 +16,42 @@
       </ul>
     </div>
   </div>
-  <section class="content_list">
-    <h1>言語一覧</h1>
-    <ul>
-    <li><h2><a href="">JavaScript</a></h2></li>
-    <li><h2><a href="">tmlib.js</a></h2></li>
-    <li><h2><a href="">LESS</a></h2></li>
-    <li><h2><a href="">CoffeeScript</a></h2></li>
-    <li><h2><a href="">jQuery</a></h2></li>
-    <li><h2><a href="">CSS</a></h2></li>
-    <li><h2><a href="">HTML</a></h2></li>
-    <li><h2><a href="">enchant.js</a></h2></li>
-  </ul>
+  <section class="content_box">
+    <h1><a href="">言語一覧</a></h1>
+    <div class="content_list cf">
+      <div class="box">
+        <h2>JavaScript</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>tmlib.js</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>LESS</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>CoffeeScript</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>jQuery</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>CSS</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>HTML</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+      <div class="box">
+        <h2>enchant.js</h2>
+        <p class="description">text dummy text dummy text duumy text dummy</p>
+      </div>
+    </div>
   </section>
 </div>
 <?php get_footer(); ?>
