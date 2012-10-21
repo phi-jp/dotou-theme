@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <div id="contents" class="cf">
   <div class="main_content cf">
-    <?php
+    <?php /* main loop */
     if(have_posts()): while(have_posts()):the_post();
       $title = get_the_title();
       $link = get_permalink();
@@ -28,7 +28,8 @@
           </div>
         </div>
       </article>
-      <?php endwhile; endif;
+    <?php endwhile; endif;
+    /* lesson list */
     if (is_single()) { ?>
       <div class="lesson_nav">
         <nav class="single_nav">
@@ -37,6 +38,7 @@
             <li class="next_post"><?php next_post_link( '%link Next →' ); ?></li>
           </ul>
         </nav>
+
         <nav class="list_nav cf">
           <h3>講座一覧</h3>
           <table>
@@ -49,26 +51,21 @@
           if($posts): foreach($posts as $post): setup_postdata($post);
             $name = get_the_title();
             $link = get_permalink();
-            if($cnt % 5 == 0){ echo "<tr>"; }
-            ?>
+            if($cnt % 5 == 0){ echo "<tr>"; } ?>
             <td><a href="<?php echo $link; ?>"><?php echo $name; ?></a></td>
-            <?php if($cnt % 5 == 5){ echo "</tr>"; }
+            <?php
+            if($cnt % 5 == 5){ echo "</tr>"; }
             $cnt++;
-          endforeach; endif; ?>
-
+          endforeach; endif;
+          ?>
           </table>
         </nav>
       </div>
-      <?php } ?>
+    <?php } ?>
   </div>
-  <?php
-  if (is_page()) {
-    get_sidebar();
-  }
-  ?>
+  <?php if (is_page()) { get_sidebar(); } ?>
 </div>
 <?php get_footer(); ?>
-
 <?php wp_footer(); ?>
 </body>
 </html>
