@@ -18,7 +18,8 @@
       <article class="entry">
         <header class="post_header">
           <h1 class="post_title"><?php echo $title; ?></h1>
-          <p><?php the_category(); ?></p>
+          <p class="category">カテゴリー : <?php the_category(", "); ?></p>
+          <p class="tags"><?php the_tags(); ?></p>
         </header>
         <div class="post cf">
           <div class="content"><?php the_content(); ?></div>
@@ -47,15 +48,11 @@
 
           if($posts): foreach($posts as $post): setup_postdata($post);
             $name = get_the_title();
-            if($cnt % 5 == 0){
-              echo "<tr>";
-            }
+            $link = get_permalink();
+            if($cnt % 5 == 0){ echo "<tr>"; }
             ?>
-            <td><?php echo $name; ?></td>
-            <?php
-            if($cnt % 5 == 5){
-              echo "</tr>";
-            }
+            <td><a href="<?php echo $link; ?>"><?php echo $name; ?></a></td>
+            <?php if($cnt % 5 == 5){ echo "</tr>"; }
             $cnt++;
           endforeach; endif; ?>
 
