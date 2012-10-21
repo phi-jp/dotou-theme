@@ -8,27 +8,35 @@
 <body <?php body_class(); ?>>
 <?php get_header(); ?>
 <div id="contents">
-  <div class="blanding">
-    <div class="slide">
-      <ul>
-        <li><a href="">怒涛とは！？</a></li>
-        <li><a href="">jsdo.itとコラボ！</a></li>
-      </ul>
+  <div class="blanding cf">
+    <section>
+      <h2>怒涛とは</h2>
+      <p>修練・鍛錬・熟練</p>
+      <p>コードを実際に組んで学んでいこう。</p>
+      <p>現在はn種類の言語をサポートしています。<br />今後も様々な言語を追加していく予定です。</p>
+      <a class="button" href="">Let's Start!</a>
+    </section>
+    <div class="image">
     </div>
   </div>
-  <section class="content_list">
-    <h1>言語一覧</h1>
-    <ul>
-    <li><h2><a href="">JavaScript</a></h2></li>
-    <li><h2><a href="">tmlib.js</a></h2></li>
-    <li><h2><a href="">LESS</a></h2></li>
-    <li><h2><a href="">CoffeeScript</a></h2></li>
-    <li><h2><a href="">jQuery</a></h2></li>
-    <li><h2><a href="">CSS</a></h2></li>
-    <li><h2><a href="">HTML</a></h2></li>
-    <li><h2><a href="">enchant.js</a></h2></li>
-  </ul>
-  </section>
+
+  <div class="about_list cf">
+    <section>
+      <h2>修練でコードを見る</h2>
+      <p>jsdo.it</p>
+    </section>
+
+    <section>
+      <h2>鍛錬でコードを書く</h2>
+      <p>jsdo.itで実際にコードを書いてみよう。<br />うまく動かない場合は修練のサンプルで確認してみよう。</p>
+    </section>
+
+    <section>
+      <h2>言語一覧</h2>
+
+      <a href="">言語一覧へ</a>
+    </section>
+  </div>
 </div>
 <?php get_footer(); ?>
 

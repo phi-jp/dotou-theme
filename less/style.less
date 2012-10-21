@@ -10,7 +10,7 @@
 /*
  * constant
  */
-@page-width: 1100px;
+@page-width: 960px;
 @single-width: 960px;
 
 
@@ -33,7 +33,7 @@ body {
   font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
   line-height: 1.5em;
   font-size: 1.5em;
-
+  color: #333;
   a {
     text-decoration: none;
     color: hsl(220, 100%, 50%);
@@ -85,6 +85,9 @@ body {
             border-left: 1px solid #EEE;
             padding-left: 20px;
           }
+          &:last-child{
+            margin-right: 0px;
+          }
           a{
             color: @header-link-color;
             height: 55px;
@@ -117,14 +120,18 @@ body {
  * footer
  */
 #footer{
+  width: @page-width;
+  margin:  0 auto;
   padding: 10px;
-  background-color: @footer-background-color;
+  border-top: 1px solid @border-color;
+  //background-color: @footer-background-color;
   text-align: center;
   .footer_nav{
     ul{
       li{
         display: inline;
         margin-right: 15px;
+        #tm .font-size(13);
         a{
           color: @footer-link-color;
         }
@@ -132,7 +139,8 @@ body {
     }
   }
   address{
-    color: @footer-font-color;
+    #tm .font-size(10);
+    //color: @footer-font-color;
   }
 }
 
@@ -141,47 +149,41 @@ body {
   #contents{
   /* main blanding */
     .blanding{
-      margin-bottom: 30px;
-      .slide{
-        background-color: #efefef;
-        #tm .radius(8px);
-        ul{
-          li{
-            height: 300px;
-            display: none;
-            a{
-              display: block;
-              width: 100%;
-              height: 100%;
-            }
-            &:first-child{
-              display: block;
-            }
-          }
+      margin-bottom: 100px;
+      section{
+        width: 30%;
+        float: right;
+        .button{
+          text-align: center;
+          width: 100px;
+          height: 50px;
+          line-height: 50px;
+          background-color: #555;
+          color: #FFF;
+          display: block;
         }
       }
+      .image{
+        float: left;
+        width: 60%;
+        height: 300px;
+        background-color: #EEE;
+      }
     }
-  /* content list */
-    .content_list{
+  /* about list */
+    .about_list{
       width: 100%;
-      ul{
-        padding: 0 0.5%;
-        li{
-          width: 32%;
-          height: 200px;
-          display: block;
-          float: left;
-          margin-right: 2%;
-          background-color: #efefef;
-          #tm .radius(8px);
-          &:last-child{
-            margin-right: 0;
-          }
-          a{
-            display: block;
-            width: 100%;
-            height: 100%;
-          }
+      section{
+        width: 30%;
+        float: left;
+        margin-right: 4.5%;
+        &:last-child{
+          margin-right: 0;
+        }
+        h2{
+          #tm .font-size(20);
+          margin-bottom: 20px;
+          color: #444;
         }
       }
     }
