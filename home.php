@@ -8,51 +8,42 @@
 <body <?php body_class(); ?>>
 <?php get_header(); ?>
 <div id="contents">
-  <div class="blanding">
-    <div class="slide">
-      <ul>
-        <li><a href="">怒涛とは！？</a></li>
-        <li><a href="">jsdo.itとコラボ！</a></li>
-      </ul>
+  <div class="blanding cf">
+    <section>
+      <h2>怒涛とは</h2>
+      <p>修練・鍛錬・熟練</p>
+      <p>コードを実際に組んで学んでいこう。</p>
+      <p>現在はn種類の言語をサポートしています。<br />今後も様々な言語を追加していく予定です。</p>
+      <a class="button" href="">Let's Start!</a>
+    </section>
+    <div class="image">
     </div>
   </div>
-  <section class="content_box">
-    <h1><a href="">言語一覧</a></h1>
-    <div class="content_list cf">
-      <div class="box">
-        <h2>JavaScript</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>tmlib.js</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>LESS</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>CoffeeScript</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>jQuery</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>CSS</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>HTML</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-      <div class="box">
-        <h2>enchant.js</h2>
-        <p class="description">text dummy text dummy text duumy text dummy</p>
-      </div>
-    </div>
-  </section>
+
+  <div class="about_list cf">
+    <section>
+      <h2>修練でコードを見る</h2>
+      <p>
+        修練はサンプルのコードを載せています。
+      </p>
+    </section>
+
+    <section>
+      <h2>鍛錬でコードを書く</h2>
+      <p>
+        jsdo.itで実際にコードを書いてみよう。<br />
+        うまく動かない場合は修練のサンプルで確認してみよう。
+      </p>
+    </section>
+
+    <section>
+      <h2>熟練でレベルアップ</h2>
+      <p>
+        熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。<br />
+      </p>
+    </section>
+  </div>
+
 </div>
 <?php get_footer(); ?>
 

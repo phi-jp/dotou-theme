@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 <div id="contents" class="cf">
   <div class="main_content cf">
-    <?php
+    <?php /* main loop */
     if(have_posts()): while(have_posts()):the_post();
       $title = get_the_title();
       $link = get_permalink();
@@ -18,6 +18,8 @@
       <article class="entry">
         <header class="post_header">
           <h1 class="post_title"><?php echo $title; ?></h1>
+          <p class="category">カテゴリー : <?php the_category(", "); ?></p>
+          <p class="tags"><?php the_tags(); ?></p>
         </header>
         <div class="post cf">
           <div class="content"><?php the_content(); ?></div>
@@ -26,7 +28,8 @@
           </div>
         </div>
       </article>
-      <?php endwhile; endif;
+    <?php endwhile; endif;
+    /* lesson list */
     if (is_single()) { ?>
       <div class="lesson_nav">
         <nav class="single_nav">
@@ -35,37 +38,34 @@
             <li class="next_post"><?php next_post_link( '%link Next →' ); ?></li>
           </ul>
         </nav>
+
         <nav class="list_nav cf">
-          <dl>
-            <dt>試練</dt>
-            <dd><a href="">part01</a></dd>
-            <dd><a href="">part02</a></dd>
-            <dd><a href="">part03</a></dd>
-          </dl>
-          <dl>
-            <dt>修練</dt>
-            <dd><a href="">part01</a></dd>
-            <dd><a href="">part02</a></dd>
-            <dd><a href="">part03</a></dd>
-          </dl>
-          <dl>
-            <dt>鍛錬</dt>
-            <dd><a href="">part01</a></dd>
-            <dd><a href="">part02</a></dd>
-            <dd><a href="">part03</a></dd>
-          </dl>
+          <h3>講座一覧</h3>
+          <table>
+          <?php
+          $cnt = 0;
+          $currentCategory = get_the_category();
+          $currentCategory = $currentCategory[0];
+          $posts = get_posts('numberposts=-1&category='.$currentCategory->term_id);
+
+          if($posts): foreach($posts as $post): setup_postdata($post);
+            $name = get_the_title();
+            $link = get_permalink();
+            if($cnt % 5 == 0){ echo "<tr>"; } ?>
+            <td><a href="<?php echo $link; ?>"><?php echo $name; ?></a></td>
+            <?php
+            if($cnt % 5 == 5){ echo "</tr>"; }
+            $cnt++;
+          endforeach; endif;
+          ?>
+          </table>
         </nav>
       </div>
-      <?php } ?>
+    <?php } ?>
   </div>
-  <?php
-  if (is_page()) {
-    get_sidebar();
-  }
-  ?>
+  <?php if (is_page()) { get_sidebar(); } ?>
 </div>
 <?php get_footer(); ?>
-
 <?php wp_footer(); ?>
 </body>
 </html>
