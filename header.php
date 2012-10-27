@@ -6,10 +6,13 @@
     </hgroup>
     <nav>
       <ul class="cf">
-        <li><a href="">01</a></li>
-        <li><a href="">02</a></li>
-        <li><a href="">03</a></li>
-        <li><a href="">04</a></li>
+        <li>
+          <form method="get" action="<?php bloginfo('url'); ?>/">
+            <input type="text" name="s">
+            <input type="submit" value="検索">
+          </form>
+        </li>
+        <li><a href="">ログイン</a></li>
       </ul>
     </nav>
   </div>
