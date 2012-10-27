@@ -138,44 +138,81 @@ body {
 /* home */
 .home{
   #contents{
-  /* main blanding */
+  /* blanding */
     .blanding{
-      margin-bottom: 100px;
-      section{
-        width: 30%;
-        float: right;
-        .button{
-          text-align: center;
-          width: 100px;
-          height: 50px;
-          line-height: 50px;
-          background-color: #555;
-          color: #FFF;
-          display: block;
+      border-bottom: 1px solid @home-border-color;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    /* main blanding */
+      .main_blanding{
+        margin-bottom: 100px;
+        section{
+          width: 30%;
+          float: right;
+          p{
+            margin-bottom: 30px;
+          }
+          dl{
+            dt{
+              #tm .font-size(17);
+              font-weight: bold;
+            }
+            dd{
+              margin-bottom: 20px;
+            }
+          }
+        }
+        .image{
+          float: left;
+          width: 60%;
+          height: 300px;
+          background-color: #EEE;
         }
       }
-      .image{
-        float: left;
-        width: 60%;
-        height: 300px;
-        background-color: #EEE;
+    /* sub blanding */
+      .sub_blanding{
+        width: 100%;
+        section{
+          width: 30%;
+          float: left;
+          margin-right: 4.5%;
+          &:last-child{
+            margin-right: 0;
+          }
+          h2{
+            #tm .font-size(20);
+            margin-bottom: 20px;
+            color: #444;
+          }
+        }
       }
     }
-  /* about list */
-    .about_list{
-      width: 100%;
-      section{
-        width: 30%;
+    .dotou_content{
+      .content_list{
         float: left;
-        margin-right: 4.5%;
-        &:last-child{
-          margin-right: 0;
+        width: 60%;
+        .dotou_lang{
+          li{
+            width: 30%;
+            height: 40px;
+            background-color: #EEE;
+            margin-right: 5%;
+            margin-bottom: 15px;
+            text-align: center;
+            line-height: 40px;
+            float: left;
+            &:nth-child(3n){
+              margin-right: 0;
+            }
+          }
         }
-        h2{
-          #tm .font-size(20);
-          margin-bottom: 20px;
-          color: #444;
+        .all_lang{
+          float: right;
         }
+      }
+      .news{
+        float: right;
+        width: 30%;
       }
     }
   }
