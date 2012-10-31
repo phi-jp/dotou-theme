@@ -12,9 +12,10 @@
 
     <div class="main_blanding cf">
       <section>
-        <h2>怒涛とは</h2>
-        <p>修練・鍛錬・熟練の3つの学習タイプ。<br>だみーーーー</p>
-        <dl>
+        <h2>怒涛</h2>
+        <p class="desc">世界一のサンプル数</p>
+        <a href="">怒涛とは</a>
+<!--         <dl>
           <dt>修練</dt>
           <dd>修練はサンプルのコードを載せています</dd>
           <dt>鍛錬</dt>
@@ -24,12 +25,12 @@
           <dd>熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。</dd>
           <dt>巻物</dt>
           <dd>書籍紹介</dd>
-        </dl>
+        </dl> -->
       </section>
       <div class="image">
       </div>
     </div>
-<!--
+
     <div class="sub_blanding cf">
       <section>
         <h2>修練でコードを見る</h2>
@@ -53,7 +54,7 @@
         </p>
       </section>
     </div>
-    -->
+
   </div>
 
   <div class="dotou_content cf">
