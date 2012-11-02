@@ -33,6 +33,14 @@ body {
   line-height: 1.5em;
   font-size: 1.5em;
   color: #333;
+  background: url(../img/bg.png);
+  h1,h2,h3,h4,p,a,li{
+    opacity: 0.99;
+    #tm .tshadow(0 0 1px #CCC);
+  }
+  h1,h2,h3,h4{
+    #tm .tshadow(0 0 2px #CCC);
+  }
   a {
     text-decoration: none;
     color: hsl(220, 100%, 50%);
@@ -235,10 +243,12 @@ body {
   }
 }
 
+
 /* single  */
 .single{
   #contents{
     width: @single-width;
+    .radiusContent();
     .main_content{
     /* sinle content */
       .entry{
