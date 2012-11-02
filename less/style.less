@@ -305,13 +305,27 @@ body {
   #contents{
     height: 100%;
     .main_content{
-      width: 70%;
-      float: right;
+      float: left;
+      h1{
+        #tm .font-size(32);
+        margin-bottom: 50px;
+      }
+      section{
+        h2{
+          #tm .font-size(22);
+        }
+        h3{
+          #tm .font-size(16);
+        }
+        p{
+          margin-bottom: 25px;
+        }
+      }
     }
   /* sidebar */
     aside{
       width: 25%;
-      float: left;
+      float: right;
       color: #EEE;
       padding: 15px;
       background-color: @footer-background-color;
