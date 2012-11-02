@@ -154,4 +154,11 @@ function getOS() {
   if(preg_match('/Macintosh/', $ua)){ return "Mac"; }
   else{ return "Win"; }
 }
+
+// 値の中身を表示
+function pr($value){
+  echo "<pre>";
+    print_r($value);
+  echo "</pre>";
+}
 ?>
