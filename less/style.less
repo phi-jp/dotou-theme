@@ -111,12 +111,21 @@ body {
  * footer
  */
 #footer{
-  width: @page-width;
+  width: @footer-width;
   margin:  0 auto;
   padding: 10px;
-  border-top: 1px solid @border-color;
-  //background-color: @footer-background-color;
   text-align: center;
+  border-top: 1px solid @footer-border-color;
+  position: relative;
+  &:before{
+    content: "";
+    display: block;
+    border-top: 1px solid @footer-border-color-before;
+    width: 100%;
+    position: absolute;
+    top: -2px;
+    left: 0;
+  }
   .footer_nav{
     ul{
       li{
