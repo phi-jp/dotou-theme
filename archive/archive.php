@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-  <?php get_template_part('head'); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<?php get_header(); ?>
 <div id="contents" class="cf">
   <h1 class="title"><?php wp_title(""); ?></h1>
   <div class="main_content cf">
@@ -24,8 +15,3 @@
       <?php endwhile; endif; ?>
   </div>
 </div>
-<?php get_footer(); ?>
-
-<?php wp_footer(); ?>
-</body>
-</html>

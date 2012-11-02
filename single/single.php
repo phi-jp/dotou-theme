@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-
-<html>
-<head>
-  <?php get_template_part('head'); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<?php get_header(); ?>
 <div id="contents" class="cf">
   <div class="main_content cf">
     <?php /* main loop */
@@ -61,7 +52,3 @@
     </div>
   </div>
 </div>
-<?php get_footer(); ?>
-<?php wp_footer(); ?>
-</body>
-</html>
