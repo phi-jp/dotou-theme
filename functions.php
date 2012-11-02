@@ -91,6 +91,11 @@ function pagination($pages = '', $range = 4){
   }
 }
 
+// ページのスラッグを取得
+function getSlug($pageID){
+  return get_page($pageID)->post_name;
+}
+
 
 /*
   ユーザー環境取得
@@ -115,31 +120,31 @@ function is_mobile(){
 function getBrowser(){
   $agent = getenv("HTTP_USER_AGENT");
   $brws = "";
-  if(mb_ereg("MSIE 6.0", $agent)){
+  if(preg_match('/MSIE 6.0/', $agent)){
     $brws = "IE6";
   }
-  else if(mb_ereg("MSIE 7.0", $agent)){
+  else if(preg_match('/MSIE 7.0/', $agent)){
     $brws = "IE7";
   }
-  else if(mb_ereg("MSIE 8.0", $agent)){
+  else if(preg_match('/MSIE 8.0/', $agent)){
     $brws = "IE8";
   }
-  else if(mb_ereg("MSIE 9.0", $agent)){
+  else if(preg_match('/MSIE 9.0/', $agent)){
     $brws = "IE9 ModernBrowser";
   }
-  else if(mb_ereg("MSIE 10.0", $agent)){
+  else if(preg_match('/MSIE 10.0/', $agent)){
     $brws = "IE10 ModernBrowser";
   }
-  else if(mb_ereg("MSIE 11.0", $agent)){
+  else if(preg_match('/MSIE 11.0/', $agent)){
     $brws = "IE11 ModernBrowser";
   }
-  else if(mb_ereg("Firefox", $agent)){
+  else if(preg_match('/Firefox/', $agent)){
     $brws = "Firefox ModernBrowser";
   }
-  else if(mb_ereg("Chrome", $agent)){
+  else if(preg_match('/Chrome/', $agent)){
     $brws = "Chrome ModernBrowser";
   }
-  else if(mb_ereg("Safari", $agent)){
+  else if(preg_match('/Safari/', $agent)){
     $brws = "Safari ModernBrowser";
   }
   else{
