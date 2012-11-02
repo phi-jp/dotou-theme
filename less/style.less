@@ -258,13 +258,14 @@ body {
             margin-bottom: 25px;
           }
         }
+        @jsdoit-width: 465px;
         .content{
           float: left;
-          width: 450px;
+          width: (@single-width - @jsdoit-width - 75px - 50px);
         }
         .code_box{
           float: right;
-          width: 465px;
+          width: @jsdoit-width;
         }
       }
 
