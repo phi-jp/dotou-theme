@@ -23,11 +23,6 @@
       </article>
       <?php endwhile; endif; ?>
   </div>
-  <?php
-  if (is_page()) {
-    get_sidebar();
-  }
-  ?>
 </div>
 <?php get_footer(); ?>
 
