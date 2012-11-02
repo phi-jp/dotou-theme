@@ -6,13 +6,6 @@
 <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico" />
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/font/fontello/css/fontello.css" />
 
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
-
-
-<!-- tmlib.js -->
-<script src="https://raw.github.com/phi1618/tmlib.js/0.1.0/build/tmlib.min.js"></script>
-<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-
 <!-- css start -->
 <!--
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
@@ -29,6 +22,11 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/plugins/prettify/prettify.css" />
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/prettify/prettify.js"></script>
 <!-- prettify -->
+
+
+<!-- tmlib.js -->
+<script src="https://raw.github.com/phi1618/tmlib.js/0.1.0/build/tmlib.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <!-- tm scroller -->
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/tmlib/tm.scroller.js"></script>
