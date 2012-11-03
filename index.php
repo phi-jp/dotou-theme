@@ -27,6 +27,9 @@
   else if(is_archive()){
     get_template_part( "archive/archive" );
   }
+  else if(is_search()){
+    get_template_part( "archive/search" );
+  }
   else if(is_404()){
     get_template_part( "page/404" );
   }
