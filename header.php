@@ -19,7 +19,7 @@
   <div class="lang_nav">
     <nav>
       <ul>
-        <li class="list_title">言語一覧</li>
+<!--        <li class="list_title">言語一覧</li>-->
         <?php
         $allCategory = get_terms( "category", "fields=all&get=all" );
         foreach($allCategory as $value):
