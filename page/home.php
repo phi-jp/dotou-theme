@@ -65,8 +65,8 @@
       <p class="all_lang"><a href="">すべての言語はこちら</a></p>
     </section>
     <section class="news">
-      <p>news</p>
-      <p>sns</p>
+      <p class="WebIconFonts">t</p>
+      <p class="WebIconFonts">f</p>
     </section>
   </div>
 
