@@ -46,6 +46,23 @@ body {
     &:hover{
     }
   }
+  /* Air Display用での確認 */
+  .reload_btn{
+    display: none;
+    @media screen and (min-width: 1280px) {
+      display: block;
+      position: absolute;
+      top: 150px;
+      left: 50px;
+      width: 100px;
+      height: 100px;
+      background-color: #333;
+      #tm .radius(50px);
+      line-height: 100px;
+      text-align: center;
+      color: #FFF;
+    }
+  }
 }
 
 /*
