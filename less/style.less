@@ -313,6 +313,7 @@ body {
         .post_header{
           .post_title{
             margin-bottom: 25px;
+            #tm .autoFoldingBack();
           }
         }
         @jsdoit-width: 465px;
@@ -331,11 +332,14 @@ body {
         .single_nav{
           margin-bottom: 30px;
           ul{
-            .prev_post{
-              float: left;
-            }
-            .next_post{
-              float: right;
+            li{
+              #tm .autoFoldingBack();
+              &.prev_post{
+                float: left;
+              }
+              &.next_post{
+                float: right;
+              }
             }
           }
         }
@@ -344,11 +348,13 @@ body {
           margin: 0 auto;
           table{
             width: 100%;
+            table-layout: fixed;
             tr{
               td{
                 text-align: left;
                 border: 1px solid #EEE;
                 width: 20%;
+                #tm .autoFoldingBack();
               }
             }
           }
