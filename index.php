@@ -10,7 +10,10 @@
 <!-- content -->
   <?php
   $pageSlug = getSlug($page_id);
-  if(is_page()){
+  if(is_home()){
+    get_template_part( "page/home" );
+  }
+  else if(is_page()){
     switch ($pageSlug) {
       case 'list':
         get_template_part( "page/".$pageSlug."" );
