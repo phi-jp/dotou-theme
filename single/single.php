@@ -5,6 +5,7 @@
       $title = get_the_title();
       $link = get_permalink();
       $date = get_the_time('Y/m/d');
+      $cat = get_the_category(); $cat = $cat[0];
       ?>
       <article class="entry">
         <header class="post_header">
@@ -23,8 +24,8 @@
     <div class="lesson_nav">
       <nav class="single_nav">
         <ul class="cf">
-          <li class="prev_post"><?php previous_post_link('← Previous %link'); ?></li>
-          <li class="next_post"><?php next_post_link( '%link Next →' ); ?></li>
+          <li class="prev_post"><?php previous_post_link('← Previous %link', '%title', FALSE, get_exclude_post_id($cat->term_id)); ?></li>
+          <li class="next_post"><?php next_post_link('%link Next →', '%title', FALSE, get_exclude_post_id($cat->term_id)); ?></li>
         </ul>
       </nav>
 
