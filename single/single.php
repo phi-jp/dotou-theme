@@ -28,7 +28,7 @@
           <li class="next_post"><?php next_post_link('%link Next →', '%title', FALSE, get_exclude_post_id($cat->term_id)); ?></li>
         </ul>
       </nav>
-
+<!--
       <nav class="list_nav cf">
         <h3>講座一覧</h3>
         <table>
@@ -50,6 +50,8 @@
           ?>
         </table>
       </nav>
+-->
     </div>
   </div>
+  <?php get_sidebar(); ?>
 </div>

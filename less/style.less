@@ -7,13 +7,6 @@
 
 
 /*
- * constant
- */
-@page-width: 960px;
-@single-width: 960px;
-
-
-/*
  * base
  */
 * {
@@ -306,8 +299,11 @@ body {
     margin: 50px auto 100px auto;
     padding: 40px;
     .main_content{
+      width: 70%;
+      float: right;
     /* sinle content */
       .entry{
+        //width: 80%;
         padding: 0px 0px 50px 0px;
         .post_header{
           .post_title{
@@ -315,14 +311,13 @@ body {
             #tm .autoFoldingBack();
           }
         }
-        @jsdoit-width: 465px;
         .content{
-          float: left;
-          width: (@single-width - @jsdoit-width - 75px - 50px);
+          //float: left;
+          //width: (@single-width - @jsdoit-width - 75px - 50px);
         }
         .code_box{
-          float: right;
-          width: @jsdoit-width;
+          //float: right;
+          //width: @jsdoit-width;
         }
       }
 
@@ -357,6 +352,17 @@ body {
               }
             }
           }
+        }
+      }
+    }
+    aside{
+      width: 20%;
+      float: left;
+      ul{
+        li{
+          margin-bottom: 5px;
+          list-style-type: disc;
+          #tm .autoFoldingBack();
         }
       }
     }
