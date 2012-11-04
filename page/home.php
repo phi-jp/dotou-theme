@@ -50,19 +50,7 @@
 
   <div class="dotou_content cf">
     <section class="content_list">
-      <h2>怒涛の言語一覧</h2>
-      <ul class="dotou_lang cf">
-        <li><a href="">js</a></li>
-        <li><a href="">html</a></li>
-        <li><a href="">css</a></li>
-        <li><a href="">js</a></li>
-        <li><a href="">html</a></li>
-        <li><a href="">css</a></li>
-        <li><a href="">js</a></li>
-        <li><a href="">html</a></li>
-        <li><a href="">css</a></li>
-      </ul>
-      <p class="all_lang"><a href="">すべての言語はこちら</a></p>
+      <h2>人気の講座</h2>
     </section>
     <section class="news">
       <p class="WebIconFonts">t</p>
