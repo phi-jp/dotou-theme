@@ -12,11 +12,15 @@
             <input type="submit" value="検索">
           </form>
         </li>
-        <li>
+        <li class="user_nav">
           <?php
           $user = wp_get_current_user();
           if( is_user_logged_in() ){ ?>
             <a href="<?php echo home_url( '/' ); ?>login/"><?php echo $user->display_name; ?></a>
+            <ul class="cf">
+              <li><a href="">Profile</a></li>
+              <li><a href="http://dotou.lugn-design.com/login/?action=logout&amp;_wpnonce=749526fd45">Logout</a>
+            </ul>
           <?php }
           else{ ?>
             <a href="<?php echo home_url( '/' ); ?>login/">ログイン</a>
@@ -29,7 +33,7 @@
     <nav>
       <ul>
         <?php
-        $allCategory = get_terms( "category", "fields=all&get=all" );
+        $allCategory = get_terms( "category", "fields=all&get=all&exclude_tree=1" );
         foreach($allCategory as $value):
           if($value->parent == 0){ ?>
             <li><a href="<?php echo get_category_link($value->term_id); ?>"><?php echo $value->name;?></a></li>
