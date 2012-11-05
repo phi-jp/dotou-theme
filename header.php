@@ -18,7 +18,7 @@
           if( is_user_logged_in() ){ ?>
             <a href="<?php echo home_url( '/' ); ?>login/"><?php echo $user->display_name; ?></a>
             <ul class="cf">
-              <li><a href="">Profile</a></li>
+              <li><a href="<?php echo home_url( '/' ); ?>login/">Profile</a></li>
               <li><a href="http://dotou.lugn-design.com/login/?action=logout&amp;_wpnonce=749526fd45">Logout</a>
             </ul>
           <?php }
