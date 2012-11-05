@@ -1,6 +1,6 @@
 <div id="contents" class="cf">
   <div class="main_content cf">
-    <?php /* main loop */
+    <?php
     if(have_posts()): while(have_posts()):the_post();
       $title = get_the_title();
       $link = get_permalink();
@@ -12,9 +12,6 @@
         </header>
         <div class="post cf">
           <div class="content"><?php the_content(); ?></div>
-          <div class="code_box">
-            <?php echo get_post_meta($post->ID, 'jsdoit', true); ?>
-          </div>
         </div>
       </article>
     <?php endwhile; endif; ?>
