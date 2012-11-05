@@ -24,6 +24,9 @@ set_post_thumbnail_size( 400, 225, true );
 // カスタムメニューを追加
 add_theme_support( 'menus' );
 
+// ログイン時のツールバーを削除
+add_filter( 'show_admin_bar', '__return_false' );
+
 
 // #more-$id を削除する。
 function custom_content_more_link( $output ) {
