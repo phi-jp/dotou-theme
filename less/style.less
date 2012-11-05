@@ -330,11 +330,16 @@ body {
         padding: 0px 0px 50px 0px;
         .post_header{
           .post_title{
-            margin-bottom: 25px;
+            margin-bottom: 10px;
             #tm .autoFoldingBack();
+          }
+          .category{
+            text-align: right;
+            margin-bottom: 25px;
           }
         }
         .content{
+          text-align: justify;
           //float: left;
           //width: (@single-width - @jsdoit-width - 75px - 50px);
         }
@@ -379,12 +384,17 @@ body {
       }
     }
     aside{
-      width: 20%;
+      width: 25%;
       float: left;
       h2{
         #tm .font-size(16);
+        margin-bottom: 20px;
+        border-left: 10px solid #333;
+        border-bottom: 1px solid #333;
+        padding-left: 15px;
       }
       ul{
+        margin-left: 18px;
         li{
           margin-bottom: 5px;
           list-style-type: disc;
@@ -466,6 +476,12 @@ body {
       margin-bottom: 50px;
     }
     .main_content{
+      section{
+        margin-bottom: 30px;
+        h2{
+          margin-bottom: 10px;
+        }
+      }
       .entry{
         padding: 0px;
         margin-bottom: 10px;
