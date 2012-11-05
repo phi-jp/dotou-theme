@@ -405,6 +405,31 @@ body {
         margin-bottom: 30px;
       }
     }
+
+    /* login & user_page */
+    &.login_page{
+      .main_content{
+        width: @single-width;
+        .radiusContent();
+        margin: 30px auto 30px auto;
+        padding: 40px;
+        h1{
+          #tm .font-size(@user-font-h1);
+          margin-bottom: 50px;
+        }
+        table{
+          width: 100%;
+          tr{
+            th{
+              width: 20%;
+            }
+            td{
+              width: 70%;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

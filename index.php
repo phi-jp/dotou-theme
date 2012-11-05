@@ -19,7 +19,9 @@
       case 'list':
         get_template_part( "page/".$pageSlug."" );
         break;
-
+      case 'login':
+        get_template_part( "page/".$pageSlug."" );
+        break;
       default:
         get_template_part( "page/page" );
         break;

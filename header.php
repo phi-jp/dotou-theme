@@ -12,7 +12,16 @@
             <input type="submit" value="検索">
           </form>
         </li>
-        <li><a href="<?php echo home_url( '/' ); ?>wp-login.php">ログイン</a></li>
+        <li>
+          <?php
+          $user = wp_get_current_user();
+          if( is_user_logged_in() ){ ?>
+            <a href="<?php echo home_url( '/' ); ?>login/"><?php echo $user->display_name; ?></a>
+          <?php }
+          else{ ?>
+            <a href="<?php echo home_url( '/' ); ?>login/">ログイン</a>
+          <?php } ?>
+        </li>
       </ul>
     </nav>
   </div>
