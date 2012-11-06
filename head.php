@@ -25,7 +25,7 @@
 
 
 <!-- tmlib.js -->
-<script src="https://raw.github.com/phi1618/tmlib.js/0.1.0/build/tmlib.min.js"></script>
+<script src="https://raw.github.com/phi1618/tmlib.js/0.1.3/build/tmlib.min.js"></script>
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <!-- tm scroller -->
