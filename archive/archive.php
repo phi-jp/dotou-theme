@@ -47,7 +47,7 @@
 <?php
 function showCategoryList($catTitle, $postArray){ ?>
 <section>
-  <h2><?php echo $catTitle; ?></h2>
+  <h2 class="category_tab"><?php echo $catTitle; ?></h2>
   <ul>
   <?php
   foreach($postArray as $value){ ?>
