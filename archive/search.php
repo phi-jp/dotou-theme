@@ -15,7 +15,14 @@
             <a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a>
             <p>
               <em class="WebIconFonts">[</em>
-              <span class="category_parent"><?php echo $parent_link; ?></span>
+              <span class="category_parent"><?php
+                if($parent_link->errors['invalid_term'][0] != "キーワードなし"){
+                  echo $parent_link;
+                }
+                else{
+                 echo "No Category.";
+                }
+                ?></span>
               <span class="category_child"><?php the_category(", "); ?></span>
             </p>
           </li>
