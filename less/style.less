@@ -476,19 +476,17 @@ body {
       margin-bottom: 50px;
     }
     .main_content{
-      section{
-        margin-bottom: 30px;
+      position: relative;
+      hgroup{
         h2{
-          margin-bottom: 10px;
+          float: left;
+          margin-right: 15px;
         }
       }
-      .entry{
-        padding: 0px;
-        margin-bottom: 10px;
-        .post_header{
-          .post_title{
-            #tm .font-size(@page-font-h2);
-          }
+      .category_section{
+        visibility: hidden;
+        &.category_section0{
+          visibility: visible;
         }
       }
     }

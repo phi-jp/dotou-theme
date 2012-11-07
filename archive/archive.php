@@ -26,6 +26,12 @@
 
     endwhile; endif; ?>
 
+    <hgroup class="cf">
+      <h2 class="category_tab">修練</h2>
+      <h2 class="category_tab">鍛錬</h2>
+      <h2 class="category_tab">熟練</h2>
+    </hgroup>
+
     <?php
     $cat_page = get_category( $cat );
     // 親カテゴリ
@@ -42,13 +48,11 @@
     }
     ?>
   </div>
-  <div id="piyo">piyo</div>
 </div>
 
 <?php
 function showCategoryList($catTitle, $postArray, $num){ ?>
-<section>
-  <h2 id="category_tab<?php echo $num; ?>" class="category_tab"><?php echo $catTitle; ?></h2>
+<section class="category_section category_section<?php echo $num; ?>">
   <ul>
   <?php
   foreach($postArray as $value){ ?>

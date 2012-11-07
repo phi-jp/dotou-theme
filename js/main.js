@@ -1,11 +1,22 @@
 window.onload = function(){
-  var hoge = tm.dom.Element(".category_tab");
-  var piyo = tm.dom.ElementList(".category_tab");
-  //var piyo = tm.dom.Element.queryAll(".category_tab");
-  console.log(hoge);
-  console.log(piyo);
+  var categoryTab = tm.dom.ElementList(".category_tab");
+  var categorySection = tm.dom.ElementList(".category_section");
 
-  hoge.event.click(function() {
-    alert("click");
+  var boxList = tm.dom.Element(document).queryAll(".category_tab");
+
+  console.log(categoryTab);
+  console.log(boxList);
+
+  categoryTab.forEach(function(elm, i) {
+    elm.event.click(function() {
+      console.log(this.html);
+      console.log(categorySection[0]);
+      categorySection.forEach(function(elm, i) {
+        elm.visible = false;
+        elm.style.set("height", "0");
+      });
+      categorySection[i].visible = true;
+      categorySection[i].style.set("height", "auto");
+    });
   });
 };
