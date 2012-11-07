@@ -30,24 +30,25 @@
     $cat_page = get_category( $cat );
     // 親カテゴリ
     if($cat_page->parent == 0){
-      showCategoryList("修練", $shurenPost);
-      showCategoryList("鍛錬", $tanrenPost);
-      showCategoryList("熟練", $jukurenPost);
+      showCategoryList("修練", $shurenPost, 0);
+      showCategoryList("鍛錬", $tanrenPost, 1);
+      showCategoryList("熟練", $jukurenPost, 2);
     }
     // 小カテゴリ
     else{
-      showCategoryList("修練", $shurenPost);
-      showCategoryList("鍛錬", $tanrenPost);
-      showCategoryList("熟練", $jukurenPost);
+      showCategoryList("修練", $shurenPost, 0);
+      showCategoryList("鍛錬", $tanrenPost, 1);
+      showCategoryList("熟練", $jukurenPost, 2);
     }
     ?>
   </div>
+  <div id="piyo">piyo</div>
 </div>
 
 <?php
-function showCategoryList($catTitle, $postArray){ ?>
+function showCategoryList($catTitle, $postArray, $num){ ?>
 <section>
-  <h2 class="category_tab"><?php echo $catTitle; ?></h2>
+  <h2 id="category_tab<?php echo $num; ?>" class="category_tab"><?php echo $catTitle; ?></h2>
   <ul>
   <?php
   foreach($postArray as $value){ ?>
