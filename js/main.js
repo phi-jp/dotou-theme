@@ -1,22 +1,21 @@
 window.onload = function(){
-  var categoryTab = tm.dom.ElementList(".category_tab");
+  /* カテゴリーのタブ切り替え */
+  var categoryTab = tm.dom.ElementList(".category .main_content hgroup h2");
   var categorySection = tm.dom.ElementList(".category_section");
-
-  var boxList = tm.dom.Element(document).queryAll(".category_tab");
-
-  console.log(categoryTab);
-  console.log(boxList);
 
   categoryTab.forEach(function(elm, i) {
     elm.event.click(function() {
-      console.log(this.html);
-      console.log(categorySection[0]);
-      categorySection.forEach(function(elm, i) {
-        elm.visible = false;
-        elm.style.set("height", "0");
+      // classにplus追加
+      categoryTab.forEach(function(elm, i) {
+        elm.attr.set("class", "plus");
       });
-      categorySection[i].visible = true;
-      categorySection[i].style.set("height", "auto");
+      elm.attr.set("class", "minus"); //  classにminus追加
+      // 全カテゴリを非表示
+      categorySection.forEach(function(elm, i) {
+        elm.style.set("display", "none");
+      });
+      // 選択したカテゴリを表示
+      categorySection[i].style.set("display", "block");
     });
   });
 };
