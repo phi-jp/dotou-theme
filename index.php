@@ -28,16 +28,30 @@
     }
   }
   else if(is_single()){
-    get_template_part( "single/single" );
+    if(get_post_type() === "news"){
+      get_template_part( "single/news" );
+    }
+    else{
+      get_template_part( "single/single" );
+    }
   }
   else if(is_archive()){
-    get_template_part( "archive/archive" );
+    //echo get_post_type();
+    if(get_post_type() === "news"){
+      get_template_part( "archive/news" );
+    }
+    else{
+      get_template_part( "archive/archive" );
+    }
   }
   else if(is_search()){
     get_template_part( "archive/search" );
   }
   else if(is_404()){
     get_template_part( "page/404" );
+  }
+  else{
+    echo "other";
   }
   ?>
 <!-- content end -->
