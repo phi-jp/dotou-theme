@@ -202,6 +202,13 @@
     white-space: -hp-pre-wrap;  /* HP Printers */
     word-wrap: break-word;      /* IE 5+ */
   }
+
+  .webFontIcon(@txt: "", @size: 24){
+    #tm .font-size(@size);
+    margin-right: 5px;
+    font-family: "WebIconFonts";
+    content: @txt;
+  }
 }
 
 /* mixin */
