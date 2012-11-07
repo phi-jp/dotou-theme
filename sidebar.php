@@ -11,8 +11,9 @@
     global $post;
     if($posts): foreach($posts as $post): setup_postdata($post); ?>
       <?php
-      $name = get_the_title(); ?>
-      <li><a href="<?php echo get_permalink() ; ?>"><?php echo $name; ?></a></li>
+      $title = get_the_title();
+      $link = get_permalink(); ?>
+      <li><a href="<?php echo $link; ?>"><?php echo $title; ?></a></li>
     <?php endforeach; endif; ?>
   </ul>
 </aside>
