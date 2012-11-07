@@ -29,7 +29,7 @@
 <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <!-- tm scroller -->
-<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/tmlib/tm.scroller.js"></script>
+<!--<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/tmlib/tm.scroller.js"></script>-->
 <!-- tm scroller -->
 
 <!--[if IE]>
@@ -39,4 +39,3 @@
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <?php wp_head(); ?>
-

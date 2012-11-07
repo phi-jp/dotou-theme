@@ -1,7 +1,11 @@
-tm.main(function(){
-  var categoryTab = tm.dom.Element("h2");
+window.onload = function(){
+  var hoge = tm.dom.Element(".category_tab");
+  var piyo = tm.dom.ElementList(".category_tab");
+  //var piyo = tm.dom.Element.queryAll(".category_tab");
+  console.log(hoge);
+  console.log(piyo);
 
-  categoryTab.event.click(function() {
+  hoge.event.click(function() {
     alert("click");
   });
-});
+};
