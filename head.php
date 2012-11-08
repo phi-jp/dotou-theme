@@ -13,7 +13,6 @@
 <!-- css end -->
 
 <!-- less start -->
-<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/tmlib.less" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less" />
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/less/less-1.3.0.min.js"></script>
 <!-- less end -->
@@ -22,7 +21,6 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/plugins/prettify/prettify.css" />
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/prettify/prettify.js"></script>
 <!-- prettify -->
-
 
 <!-- tmlib.js -->
 <script src="https://raw.github.com/phi1618/tmlib.js/0.1.3/build/tmlib.min.js"></script>
