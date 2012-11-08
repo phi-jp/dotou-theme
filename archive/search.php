@@ -7,7 +7,7 @@
       $link = get_permalink();
       $date = get_the_time('Y/m/d');
       $category = get_the_category(); $category = $category[0];
-      $parent_link = get_category_parents($category->category_parent, true, '');
+      $parentLink = get_category_parents($category->category_parent, true, '');
       ?>
       <article class="entry">
         <ul>
@@ -16,8 +16,8 @@
             <p>
               <em class="WebIconFonts">[</em>
               <span class="category_parent"><?php
-                if($parent_link->errors['invalid_term'][0] != "キーワードなし"){
-                  echo $parent_link;
+                if($parentLink->errors['invalid_term'][0] != "キーワードなし"){
+                  echo $parentLink;
                 }
                 else{
                  echo "No Category.";
