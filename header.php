@@ -6,10 +6,10 @@
     </hgroup>
     <nav class="global_nav">
       <ul class="cf">
-        <li>
-          <form method="get" action="<?php bloginfo('url'); ?>/">
-            <input type="text" name="s">
-            <input type="submit" value="検索">
+        <li class="search">
+          <form class="form-search" method="get" action="<?php bloginfo('url'); ?>/">
+            <input class="input-medium" type="text" name="s">
+            <input class="btn" type="submit" value="検索">
           </form>
         </li>
         <li class="user_nav">
