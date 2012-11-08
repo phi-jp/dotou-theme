@@ -147,7 +147,7 @@ foreach ( array( 'posts', 'pages' ) as $post_cap )
 
 		<p class="submit">
 			<input type="hidden" name="user_id" id="user_id" value="<?php echo esc_attr( $current_user->ID ); ?>" />
-			<input type="submit" class="button-primary" value="<?php esc_attr_e( 'Update Profile', 'theme-my-login' ); ?>" name="submit" />
+			<input type="submit" class="btn button-primary" value="<?php esc_attr_e( 'Update Profile', 'theme-my-login' ); ?>" name="submit" />
 		</p>
 	</form>
 </div>
