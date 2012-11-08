@@ -25,11 +25,14 @@ body {
 
   font-family: "メイリオ", "Meiryo", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "ＭＳ Ｐゴシック", sans-serif;
   line-height: 1.5em;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   color: #333;
   background: url(../img/bg.png);
   h1,h2,h3,h4,p,a,li{
     opacity: 0.99;
+  }
+  h1{
+    line-height: 3.5rem;
   }
   a {
     text-decoration: none;
@@ -67,11 +70,17 @@ body {
   padding: 0px;
   position: relative;
 
-  background: -webkit-gradient(linear, left top, left bottom, from(#333),
-          color-stop(0.3, #444),
-          color-stop(0.5, #444),
-          color-stop(0.7, #444),
-          to(#333));　/* Safari,Google Chrome用 */
+  -webkit-box-shadow: inset 1px 1px 30px rgba(000,000,000,0.3),
+                      inset -1px -1px 30px rgba(000,000,000,0.3),
+                      0px 3px 24px #CCC;
+  -moz-box-shadow:    inset 1px 1px 30px rgba(000,000,000,0.3),
+                      inset -1px -1px 30px rgba(000,000,000,0.3),
+                      0px 3px 24px #CCC;
+  box-shadow:         inset 1px 1px 30px rgba(000,000,000,0.3),
+                      inset -1px -1px 30px rgba(000,000,000,0.3),
+                      0px 3px 24px #CCC;
+
+  background: url(../img/bg2.png);
   .header_content,
   .lang_nav{
     margin: 0 auto;
@@ -99,6 +108,7 @@ body {
       float: left;
       h1{
         #tm .font-size(@header-font-h1);
+        #tm .line-height(@header-font-h1);
         margin-top: 10px;
         a{
           color: @header-link-color;
@@ -261,18 +271,6 @@ body {
             line-height: 4.8rem;
             margin-bottom: 30px;
           }
-          /*
-          dl{
-            dt{
-              #tm .font-size(@home-font-sub-title);
-              font-weight: bold;
-              margin-bottom: 0px;
-            }
-            dd{
-              margin-bottom: 20px;
-            }
-          }
-          */
         }
         .image{
           float: left;
@@ -451,7 +449,7 @@ body {
       float: left;
       h1{
         #tm .font-size(@page-font-h1);
-        margin-bottom: 50px;
+        margin-bottom: 20px;
       }
       section{
         h2{
@@ -462,6 +460,11 @@ body {
         }
         p{
           margin-bottom: 25px;
+        }
+      }
+      form{
+        input{
+          height: 28px;
         }
       }
     }
@@ -491,11 +494,11 @@ body {
           #tm .font-size(@user-font-h1);
           margin-bottom: 20px;
         }
+        h2{
+          #tm .font-size(15);
+          margin-bottom: 10px;
+        }
         .login_box{
-          h2{
-            #tm .font-size(15);
-            margin-bottom: 10px;
-          }
           .login{
             float: left;
             width: 250px;
@@ -513,19 +516,19 @@ body {
               padding: 5px;
             }
           }
-          /* ログイン前 */
-          #theme-my-login{
-            position: relative;
-            p{
-              margin: 5px 0;
-            }
-            /* 新規登録 */
-            #wpg-regsiter{
-            }
-            /* ログイン */
-            #wpg-login{
-              margin: 15px 0;
-            }
+        }
+        /* ログイン前 */
+        #theme-my-login{
+          position: relative;
+          p{
+            margin: 5px 0;
+          }
+          /* 新規登録 */
+          #wpg-regsiter{
+          }
+          /* ログイン */
+          #wpg-login{
+            margin: 15px 0;
           }
         }
         /* ログイン後 */
@@ -571,7 +574,7 @@ body {
 .archive{
   #contents{
     .title{
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
     .main_content{
       position: relative;
@@ -634,7 +637,7 @@ body {
 .search{
   #contents{
     .title{
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
     .main_content{
       section{
