@@ -6,17 +6,6 @@
         <h2>怒涛</h2>
         <p class="desc">世界一のサンプル数</p>
         <a href="">怒涛とは</a>
-<!--         <dl>
-          <dt>修練</dt>
-          <dd>修練はサンプルのコードを載せています</dd>
-          <dt>鍛錬</dt>
-          <dd>jsdo.itで実際にコードを書いてみよう。<br />
-            うまく動かない場合は修練のサンプルで確認してみよう。</dd>
-          <dt>熟練</dt>
-          <dd>熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。</dd>
-          <dt>巻物</dt>
-          <dd>書籍紹介</dd>
-        </dl> -->
       </section>
       <div class="image">
       </div>
@@ -49,13 +38,54 @@
   </div>
 
   <div class="dotou_content cf">
-    <section class="content_list">
-      <h2>人気の講座</h2>
-    </section>
-    <section class="news">
+    <div class="news_box">
+      <section class="news">
+        <h2>新着の講座</h2>
+        <ul class="cf">
+        <?php
+          $posts = get_posts('numberposts=5&exclude=1');
+
+          if($posts): foreach($posts as $post): setup_postdata($post);
+            $date = get_the_time('Y/m/d');
+            $title = get_the_title();
+            $link = get_permalink();
+            $category = get_the_category(); $category = $category[0];
+            $parentLink = get_category_parents($category->category_parent, true, '');
+
+            if($parentLink->errors['invalid_term'][0] == "キーワードなし"){
+              $parentLink = "";
+            }
+            ?>
+
+          <li class="cf">
+            <p><span class="date"><?php echo $date; ?></span><span class="category"><?php echo $parentLink; the_category(", "); ?></span> </p>
+            <a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a>
+          </li>
+        <?php endforeach; endif; ?>
+        </ul>
+      </section>
+      <section class="announce">
+        <h2>お知らせ</h2>
+        <ul class="cf">
+          <?php
+          $loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 9999, 'order' => 'ASC' ) );
+          while ( $loop->have_posts() ) : $loop->the_post();
+            $title = get_the_title();
+            $link = get_permalink();
+            $date = get_the_time('Y/m/d');
+            ?>
+          <li class="cf">
+            <p><span class="date"><?php echo $date; ?></span></p>
+            <a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a>
+          </li>
+          <?php endwhile; wp_reset_query(); ?>
+        </ul>
+      </section>
+    </div>
+    <div class="sns">
       <p class="WebIconFonts">t</p>
       <p class="WebIconFonts">f</p>
-    </section>
+    </div>
   </div>
 
 </div>
