@@ -477,17 +477,44 @@ body {
         padding: 40px;
         h1{
           #tm .font-size(@user-font-h1);
-          margin-bottom: 30px;
+          margin-bottom: 20px;
         }
-        .message{
-          display: none;
-        }
-        /* ログイン前 */
-        #theme-my-login{
-          p{
-            margin-bottom: 5px;
+        .login_box{
+          h2{
+            #tm .font-size(15);
+            margin-bottom: 10px;
           }
-
+          .login{
+            float: left;
+            width: 250px;
+            padding: 0;
+          }
+          .sns_login{
+            float: left;
+            width: 200px;
+            a{
+              margin: 5px;
+            }
+            .caution{
+              #tm .font-size(12);
+              border: 1px dotted #CCC;
+              padding: 5px;
+            }
+          }
+          /* ログイン前 */
+          #theme-my-login{
+            position: relative;
+            p{
+              margin: 5px 0;
+            }
+            /* 新規登録 */
+            #wpg-regsiter{
+            }
+            /* ログイン */
+            #wpg-login{
+              margin: 15px 0;
+            }
+          }
         }
         /* ログイン後 */
         #your-profile{
@@ -500,6 +527,8 @@ body {
           }
           table{
             width: 100%;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
             tr{
               th{
                 width: 20%;
@@ -517,6 +546,9 @@ body {
           display: none;
         }
         .tml-action-links{
+        }
+        .message{
+          display: none;
         }
       }
     }
