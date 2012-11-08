@@ -23,6 +23,7 @@
             </ul>
           <?php }
           else{ ?>
+            <a class="register" href="<?php echo home_url( '/' ); ?>login/?action=register">新規登録</a>
             <a href="<?php echo home_url( '/' ); ?>login/">ログイン</a>
           <?php } ?>
         </li>
