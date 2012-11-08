@@ -73,6 +73,13 @@ function showCategoryList($catTitle, $postArray, $num){ ?>
       <p><?php echo $value["excerpt"]; ?></p>
     </li>
   <?php } ?>
+  <?php
+  for($i = 0; $i < 100; $i++){ ?>
+    <li>
+      <h2><a href="">test<?php echo $i; ?></a></h2>
+      <p>dammyダミーdammyダミーdammyダミーdammyダミーdammyダミーdammyダミー</p>
+    </li>
+  <?php } ?>
   </ul>
 </section>
 <?php } ?>
