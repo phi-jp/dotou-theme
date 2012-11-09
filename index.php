@@ -6,7 +6,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-<a class="reload_btn" href="">更新</a>
+<a class="reload_btn" href="">確認用更新</a>
 <?php get_header(); ?>
 <!-- content -->
   <?php
