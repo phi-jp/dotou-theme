@@ -352,7 +352,7 @@ body {
     margin: 50px auto 100px auto;
     padding: 40px;
     .main_content{
-      width: 70%;
+      width: 100%;
       float: right;
     /* sinle content */
       .entry{
@@ -370,8 +370,12 @@ body {
         }
         .content{
           text-align: justify;
+          float: left;
+          width: (@single-width - @jsdoit-width - 75px - 50px);
         }
         .code_box{
+          float: right;
+          width: @jsdoit-width;
         }
       }
 
@@ -405,28 +409,6 @@ body {
                 #tm .autoFoldingBack();
               }
             }
-          }
-        }
-      }
-    }
-    aside{
-      width: 25%;
-      float: left;
-      h2{
-        #tm .font-size(16);
-        margin-bottom: 10px;
-        border-left: 5px solid #333;
-        border-bottom: 1px solid #333;
-        padding-left: 15px;
-      }
-      ul{
-        margin-left: 20px;
-        margin-bottom: 20px;
-        li{
-          margin-bottom: 5px;
-          #tm .autoFoldingBack();
-          a{
-            #tm .font-size(13);
           }
         }
       }

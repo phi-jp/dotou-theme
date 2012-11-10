@@ -28,7 +28,6 @@
           <li class="next_post"><?php next_post_link('%link Next →', '%title', FALSE, get_exclude_post_id($cat->term_id)); ?></li>
         </ul>
       </nav>
-<!--
       <nav class="list_nav cf">
         <h3>講座一覧</h3>
         <table>
@@ -41,17 +40,18 @@
           if($posts): foreach($posts as $post): setup_postdata($post);
             $name = get_the_title();
             $link = get_permalink();
-            if($cnt % 5 == 0){ echo "<tr>"; } ?>
+            echo "<tr>";
+            //if($cnt % 1 == 0){ echo "<tr>"; } ?>
             <td><a href="<?php echo $link; ?>"><?php echo $name; ?></a></td>
             <?php
-            if($cnt % 5 == 5){ echo "</tr>"; }
+            echo "</tr>";
+            //if($cnt % 1 == 5){ echo "</tr>"; }
             $cnt++;
           endforeach; endif;
           ?>
         </table>
       </nav>
--->
     </div>
   </div>
-  <?php get_sidebar(); ?>
+  <?php //get_sidebar(); ?>
 </div>
