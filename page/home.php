@@ -68,7 +68,7 @@
         <h2>お知らせ</h2>
         <ul class="cf">
           <?php
-          $loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 9999, 'order' => 'ASC' ) );
+          $loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 9999 ) );
           while ( $loop->have_posts() ) : $loop->the_post();
             $title = get_the_title();
             $link = get_permalink();
