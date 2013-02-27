@@ -77,6 +77,7 @@
         <?php if ( 'textbox' == bp_get_the_profile_field_type() ) : ?>
 
         <label for="<?php bp_the_profile_field_input_name(); ?>"><?php bp_the_profile_field_name(); ?> <?php if ( bp_get_the_profile_field_is_required() ) : ?><?php endif; ?></label>
+        <span class="description"><?php bp_the_profile_field_description(); ?></span>
         <?php do_action( 'bp_' . bp_get_the_profile_field_input_name() . '_errors' ); ?>
         <input type="text" name="<?php bp_the_profile_field_input_name(); ?>" id="<?php bp_the_profile_field_input_name(); ?>" value="<?php bp_the_profile_field_edit_value(); ?>" />
 
@@ -158,9 +159,9 @@
         <?php endif; ?>
 
         <?php if ( bp_current_user_can( 'bp_xprofile_change_field_visibility' ) ) : ?>
-        <p class="field-visibility-settings-toggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
+        <!--<p class="field-visibility-settings-toggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
           <?php //printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'buddypress' ), bp_get_the_profile_field_visibility_level_label() ) ?> <a href="#" class="visibility-toggle-link">Change</a>
-        </p>
+        </p>-->
 
         <div class="field-visibility-settings" id="field-visibility-settings-<?php bp_the_profile_field_id() ?>">
           <fieldset>
@@ -173,15 +174,13 @@
 
         </div>
         <?php else : ?>
-        <p class="field-visibility-settings-notoggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
+        <!--<p class="field-visibility-settings-notoggle" id="field-visibility-settings-toggle-<?php bp_the_profile_field_id() ?>">
           <?php //printf( __( 'This field can be seen by: <span class="current-visibility-level">%s</span>', 'buddypress' ), bp_get_the_profile_field_visibility_level_label() ) ?>
-        </p>
+        </p>-->
         <?php endif ?>
-
 
         <?php do_action( 'bp_custom_profile_edit_fields' ); ?>
 
-        <p class="description"><?php bp_the_profile_field_description(); ?></p>
 
       </div>
 

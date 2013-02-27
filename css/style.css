@@ -7605,6 +7605,18 @@ body a {
 .login .well form .submit .button_group {
   float: right;
 }
+.register .well form .editfield,
+.login .well form .editfield {
+  margin-bottom: 15px;
+}
+.register .well form .editfield input,
+.login .well form .editfield input {
+  margin-bottom: 0;
+}
+.register .well form .error,
+.login .well form .error {
+  color: red;
+}
 .register .well .sns_login,
 .login .well .sns_login {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
