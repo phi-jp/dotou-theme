@@ -24,6 +24,9 @@ set_post_thumbnail_size( 400, 225, true );
 // カスタムメニューを追加
 add_theme_support( 'menus' );
 
+// ログイン時のツールバーを削除
+add_filter( 'show_admin_bar', '__return_false' );
+
 
 // #more-$id を削除する。
 function custom_content_more_link( $output ) {
@@ -91,6 +94,48 @@ function pagination($pages = '', $range = 4){
   }
 }
 
+// ページのスラッグを取得
+function getSlug($pageID){
+  return get_page($pageID)->post_name;
+}
+
+/* カスタム投稿タイプを追加 */
+function my_custom_init() {
+    register_post_type( 'news', array(
+        'label' => 'お知らせ',
+        'public' => true,
+        'supports' => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'custom-fields' ,'comments' ),
+        'menu_position' => 5,
+        'has_archive' => true
+    ));
+}
+add_action( 'init', 'my_custom_init' );
+
+// カスタム投稿のアーカイブ
+global $my_archives_post_type;
+add_filter( 'getarchives_where', 'my_getarchives_where', 10, 2 );
+function my_getarchives_where( $where, $r ) {
+  global $my_archives_post_type;
+  if ( isset($r['post_type']) ) {
+    $my_archives_post_type = $r['post_type'];
+    $where = str_replace( '\'post\'', '\'' . $r['post_type'] . '\'', $where );
+  } else {
+    $my_archives_post_type = '';
+  }
+  return $where;
+}
+add_filter( 'get_archives_link', 'my_get_archives_link' );
+function my_get_archives_link( $link_html ) {
+  global $my_archives_post_type;
+  if ( '' != $my_archives_post_type )
+    $add_link .= '?post_type=' . $my_archives_post_type;
+  $link_html = preg_replace("/href=\'(.+)\'\s/","href='$1".$add_link." '",$link_html);
+
+  return $link_html;
+}
+/* カスタム投稿タイプここまで */
+
+
 
 /*
   ユーザー環境取得
@@ -115,31 +160,31 @@ function is_mobile(){
 function getBrowser(){
   $agent = getenv("HTTP_USER_AGENT");
   $brws = "";
-  if(mb_ereg("MSIE 6.0", $agent)){
+  if(preg_match('/MSIE 6.0/', $agent)){
     $brws = "IE6";
   }
-  else if(mb_ereg("MSIE 7.0", $agent)){
+  else if(preg_match('/MSIE 7.0/', $agent)){
     $brws = "IE7";
   }
-  else if(mb_ereg("MSIE 8.0", $agent)){
+  else if(preg_match('/MSIE 8.0/', $agent)){
     $brws = "IE8";
   }
-  else if(mb_ereg("MSIE 9.0", $agent)){
+  else if(preg_match('/MSIE 9.0/', $agent)){
     $brws = "IE9 ModernBrowser";
   }
-  else if(mb_ereg("MSIE 10.0", $agent)){
+  else if(preg_match('/MSIE 10.0/', $agent)){
     $brws = "IE10 ModernBrowser";
   }
-  else if(mb_ereg("MSIE 11.0", $agent)){
+  else if(preg_match('/MSIE 11.0/', $agent)){
     $brws = "IE11 ModernBrowser";
   }
-  else if(mb_ereg("Firefox", $agent)){
+  else if(preg_match('/Firefox/', $agent)){
     $brws = "Firefox ModernBrowser";
   }
-  else if(mb_ereg("Chrome", $agent)){
+  else if(preg_match('/Chrome/', $agent)){
     $brws = "Chrome ModernBrowser";
   }
-  else if(mb_ereg("Safari", $agent)){
+  else if(preg_match('/Safari/', $agent)){
     $brws = "Safari ModernBrowser";
   }
   else{
@@ -153,5 +198,16 @@ function getOS() {
   $ua = $_SERVER['HTTP_USER_AGENT'];
   if(preg_match('/Macintosh/', $ua)){ return "Mac"; }
   else{ return "Win"; }
+}
+
+/*
+ * その他
+ */
+
+// 値の中身を表示
+function pr($value){
+  echo "<pre>";
+    print_r($value);
+  echo "</pre>";
 }
 ?>

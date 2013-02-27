@@ -175,14 +175,53 @@
       .atn { color: #404; }
       .atv { color: #060; }
     }
+  }
 
+  .autoFoldingBack(){
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
   }
   .font-size(@value){
     font-size: @value*1px;
     font-size: @value/10rem;
   }
+  .line-height(@value){
+    line-height: @value*1px;
+    line-height: @value/10rem;
+  }
+
+  .autoFoldingBack(){
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+  }
+
+  .webFontIcon(@txt: "", @size: 24){
+    #tm .font-size(@size);
+    margin-right: 5px;
+    font-family: "WebIconFonts";
+    content: @txt;
+  }
 }
 
+/* mixin */
+.radiusContent(){
+    border: 1px solid #CCC;
+    #tm .radius(10px);
+    #tm .box-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+    background-color: #FFF;
+}
 
 
 

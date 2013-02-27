@@ -2,18 +2,23 @@
  * font
  */
 @font-face {
-  #tm .fontface("ModernPictogramsNormal", "../font/modern-pictograms", "modernpics-webfont");
+  //#tm .fontface("ModernPictogramsNormal", "../font/modern-pictograms", "modernpics-webfont");
+  #tm .fontface("WebIconFonts", "../font/WebIconFonts", "WebIconFonts");
+}
+.WebIconFonts{
+  font-family: "WebIconFonts";
 }
 
 
 /*
  * constant
  */
+@page-width: 1024px;
 @key-color: #fff;
 @font-size: 62.5%;
 
 @icon-star: '\2605';  // '★'
-@icon-github: '';    // 
+@icon-github: '';    //
 @icon-eye-1: '';     //
 @icon-download: '📥';
 @icon-wrench-2: '🔧';
@@ -34,24 +39,53 @@
 @icon-right-open: '';
 
 
-
 /*
  * header
  */
 @header-link-color: #EEE;
 @header-font-color: #666;
+@header-border-color: #999;
+@header-font-h1: 28;
+@header-font-h2: 11;
+@header-global-height: 60px;
+@header-lang-height: 35px;
+@header-height: @header-global-height + @header-lang-height;
+@header-lang-width: 100%;
+
 
 /*
  * footer
  */
+@footer-width: 100%;
 @footer-font-color: #EEE;
-@border-color: #CCC;
+@footer-border-color: white;
+@footer-border-color-before: #CCC;
 @footer-background-color: #333;
 @footer-link-color: #99CCFF;
 @footer-link-color: #327bff;
+@footer-font-size: 13;
+@footer-font-address: 10;
 
 /*
  * side
  */
 @aside-link-color: #EEE;
 
+/* home */
+@home-border-color: #CCC;
+@home-font-blanding: 64;
+@home-font-description: 32;
+@home-font-sub-title: 20;
+
+/* single */
+@single-width: @page-width;
+@single-content-width: 620px;
+@jsdoit-width: 465px;
+
+/* page */
+@page-font-h1: 32;
+@page-font-h2: 22;
+@page-font-h3: 16;
+
+/* login & user page */
+@user-font-h1: 24;
