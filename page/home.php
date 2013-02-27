@@ -1,91 +1,97 @@
-<div id="contents">
-  <div class="blanding">
+<div class="blanding">
 
-    <div class="main_blanding cf">
-      <section>
-        <h2>怒涛</h2>
-        <p class="desc">世界一のサンプル数</p>
-        <a href="">怒涛とは</a>
-      </section>
-      <div class="image">
-      </div>
+<!--  <div class="home_search well">-->
+<!--    <form class="form-search" method="get" action="--><?php //bloginfo( 'url' ); ?><!--">-->
+<!--      <input class="input-medium search-query" type="text" name="s">-->
+<!--      <button type="submit" class="btn">Search</button>-->
+<!--    </form>-->
+<!--  </div>-->
+
+  <div class="main_blanding row-fluid">
+    <div class="image span5">
     </div>
-
-    <div class="sub_blanding cf">
-      <section>
-        <h2>修練でコードを見る</h2>
-        <p>
-          修練はサンプルのコードを載せています。
-        </p>
-      </section>
-
-      <section>
-        <h2>鍛錬でコードを書く</h2>
-        <p>
-          jsdo.itで実際にコードを書いてみよう。<br />
-          うまく動かない場合は修練のサンプルで確認してみよう。
-        </p>
-      </section>
-
-      <section>
-        <h2>熟練でレベルアップ</h2>
-        <p>
-          熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。<br />
-        </p>
-      </section>
-    </div>
-
+    <section class="span5">
+      <h2>怒濤</h2>
+      <p class="desc">世界一のサンプル数</p>
+      <a href="">怒濤とは</a>
+    </section>
   </div>
 
-  <div class="dotou_content cf">
-    <div class="news_box">
-      <section class="news">
-        <h2>新着の講座</h2>
-        <ul class="cf">
+  <div class="sub_blanding row-fluid">
+        <section class="span4">
+          <h2>修練でコードを見る</h2>
+          <p>
+            修練はサンプルのコードを載せています。
+          </p>
+        </section>
+
+        <section class="span4">
+          <h2>鍛錬でコードを書く</h2>
+          <p>
+            jsdo.itで実際にコードを書いてみよう。<br />
+            うまく動かない場合は修練のサンプルで確認してみよう。
+          </p>
+        </section>
+
+        <section class="span4">
+          <h2>熟練でレベルアップ</h2>
+          <p>
+            熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。<br />
+          </p>
+        </section>
+  </div>
+
+</div>
+
+<div class="row-fluid cf">
+  <div class="news_box">
+    <section class="news span7">
+      <h3>新着の講座</h3>
+      <table>
+        <tbody>
         <?php
-          $posts = get_posts('numberposts=5&exclude=1');
+        $posts = get_posts('numberposts=5&exclude=1');
 
-          if($posts): foreach($posts as $post): setup_postdata($post);
-            $date = get_the_time('Y/m/d');
-            $title = get_the_title();
-            $link = get_permalink();
-            $category = get_the_category(); $category = $category[0];
-            $parentLink = get_category_parents($category->category_parent, true, '');
+        if($posts): foreach($posts as $post): setup_postdata($post);
+          $date = get_the_time('Y/m/d');
+          $title = get_the_title();
+          $link = get_permalink();
+          $category = get_the_category(); $category = $category[0];
+          $parentLink = get_category_parents($category->category_parent, true, '');
 
-            if($parentLink->errors['invalid_term'][0] == "キーワードなし"){
-              $parentLink = "";
-            }
-            ?>
-
-          <li class="cf">
-            <p><span class="date"><?php echo $date; ?></span><span class="category"><?php echo $parentLink; the_category(", "); ?></span> </p>
-            <a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a>
-          </li>
-        <?php endforeach; endif; ?>
-        </ul>
-      </section>
+          if($parentLink->errors['invalid_term'][0] == "キーワードなし"){
+            $parentLink = "";
+          }
+          ?>
+          <tr>
+            <td class="date"><?php echo $date; ?></td>
+            <td class="category"><?php echo $parentLink." in "; the_category(", "); ?></td>
+            <th><a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a></th>
+          </tr>
+          <?php endforeach; endif; ?>
+        </tbody>
+      </table>
+    </section>
+    <div class="span5">
       <section class="announce">
-        <h2>お知らせ</h2>
-        <ul class="cf">
+        <h3>お知らせ</h3>
+        <table>
+          <tbody>
           <?php
-          $loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 9999 ) );
+          $loop = new WP_Query( array( 'post_type' => 'news', 'posts_per_page' => 5 ) );
           while ( $loop->have_posts() ) : $loop->the_post();
             $title = get_the_title();
             $link = get_permalink();
             $date = get_the_time('Y/m/d');
             ?>
-          <li class="cf">
-            <p><span class="date"><?php echo $date; ?></span></p>
-            <a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a>
-          </li>
-          <?php endwhile; wp_reset_query(); ?>
-        </ul>
+          <tr>
+            <td class="date"><?php echo $date; ?></td>
+            <th><a class="link" href="<?php echo $link; ?>"><?php echo $title; ?></a></th>
+          </tr>
+            <?php endwhile; wp_reset_query(); ?>
+          </tbody>
+        </table>
       </section>
     </div>
-    <div class="sns">
-      <p class="WebIconFonts">t</p>
-      <p class="WebIconFonts">f</p>
-    </div>
   </div>
-
 </div>

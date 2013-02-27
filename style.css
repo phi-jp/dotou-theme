@@ -1,9 +1,24 @@
-/*
-Theme Name: 怒濤スタイル
-Theme URI: http://dotou.net
-Description: 怒濤スタイル
-Author: dotou
-Version: 1.0
-Tags: 
+/**
+ * Theme Name: dotou
+ * Theme URI: http://dotou.net/
+ * Description: dotou theme.
+ * Version: 1.0
+ * Author: dotou
+ * Author URI: http://dotou.net/
+ * License: GNU General Public License
+ * License URI: license.txt
+ * Tags: buddypress
+ *
+ *** IMPORTANT - DO NOT COPY THIS THEME **
+ *
+ * If you want to make a custom theme based on this theme, DO NOT copy and edit it. By
+ * doing this you will make updates and maintainence much harder for yourself.
+ * Instead, please read this codex page on how to build a BuddyPress child theme:
+ *
+ * http://codex.buddypress.org/how-to-guides/building-a-buddypress-child-theme/
+ *
+ ***
+ *
+ * This file intentionally left blank. CSS is enqueued in functions.php
+ *
  */
-
