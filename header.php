@@ -12,7 +12,7 @@ $pageSlug = getSlug($page_id);
 $body_class = "";
 if(checkEmEn($pageSlug)){ $body_class =  $pageSlug; };
 ?>
-<body <?php body_class($body_class); ?> id="bp-default">
+<body <?php body_class($body_class); ?> id="bp-default" class="dotou">
 <?php do_action( 'bp_before_header' ); ?>
 
 <header class="navbar navbar-fixed-top">

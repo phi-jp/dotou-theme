@@ -21,8 +21,8 @@
         怒濤とは世界一のサンプル数を誇るサービスです. dummy dummy dummy dummy dummy dummy dummy dummy 
       </p>
       <p>
-        <a class="btn btn-primary btn-large" href="https://github.com/phi1618/tmlib.js" target="_blank">
-          Go Github »
+        <a class="btn btn-primary btn-large" href="#" target="">
+          始めよう »
         </a>
       </p>
     </div>

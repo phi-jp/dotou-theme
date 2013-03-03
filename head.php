@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/style.css">
 -->
 
+
+
 <!-- less start -->
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less" />
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.3.3/less.min.js"></script>
