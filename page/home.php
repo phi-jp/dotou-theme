@@ -32,24 +32,27 @@
   <div class="sub_blanding row-fluid">
         <section class="span4">
           <h2>修練でコードを見る</h2>
-          <p>
+          <p class="description">
             修練はサンプルのコードを載せています。
           </p>
+          <p><a class="btn" href="#">詳細 »</a></p>
         </section>
 
         <section class="span4">
           <h2>鍛錬でコードを書く</h2>
-          <p>
+          <p class="description">
             jsdo.itで実際にコードを書いてみよう。<br />
             うまく動かない場合は修練のサンプルで確認してみよう。
           </p>
+          <p><a class="btn" href="#">詳細 »</a></p>
         </section>
 
         <section class="span4">
           <h2>熟練でレベルアップ</h2>
-          <p>
+          <p class="description">
             熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。<br />
           </p>
+          <p><a class="btn" href="#">詳細 »</a></p>
         </section>
   </div>
 
