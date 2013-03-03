@@ -56,6 +56,7 @@ global $pageSlug;
       else{
         echo "other";
       }
+      
       ?>
     </div>
 

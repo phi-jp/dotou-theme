@@ -7,15 +7,27 @@
 <!--    </form>-->
 <!--  </div>-->
 
-  <div class="main_blanding row-fluid">
-    <div class="image span5">
+
+<div class="hero-unit">
+  <h1>怒濤 <small>世界一のサンプル数</small></h1>
+  <br>
+
+  <div class="row">
+    <div class="span3">
+      <img alt="screenshot" src="logo.png" width=400px height=400px>
     </div>
-    <section class="span5">
-      <h2>怒濤</h2>
-      <p class="desc">世界一のサンプル数</p>
-      <a href="">怒濤とは</a>
-    </section>
+    <div class="span6">
+      <p>
+        怒濤とは世界一のサンプル数を誇るサービスです. dummy dummy dummy dummy dummy dummy dummy dummy 
+      </p>
+      <p>
+        <a class="btn btn-primary btn-large" href="https://github.com/phi1618/tmlib.js" target="_blank">
+          Go Github »
+        </a>
+      </p>
+    </div>
   </div>
+</div>
 
   <div class="sub_blanding row-fluid">
         <section class="span4">
