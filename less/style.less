@@ -23,8 +23,11 @@
   #tm .box-sizing(border-box);
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  margin-top: 60px;
   font-family: "Meiryo", "メイリオ", "ヒラギノ角ゴ Pro W3", sans-serif;
   font-size: @font-size;
   line-height: 1.5em;
@@ -39,10 +42,20 @@ body {
   }
 }
 
-#header {
-  margin-top: 30px;
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  padding-top: 60px;
+  margin: 0 auto -120px;
 }
 
+#header {
+}
+
+
+body>.container {
+  min-height: 100%;
+}
 
 .hero-unit {
   padding: 30px;
@@ -64,4 +77,29 @@ body {
 }
 
 
+#footer {
+  text-align: center;
+  height: 120px;
+  padding: 30px 0;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+
+  p {
+    margin-bottom: 0;
+    color: #777;
+  }
+  .footer-links {
+    margin: 10px 0;
+
+    li {
+      display: inline;
+      padding: 0 2px;
+
+      &:first-child {
+        padding-left: 0px;
+      }
+    }
+  }
+
+}
 
