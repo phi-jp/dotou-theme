@@ -14,9 +14,15 @@
                     <div class="span9">
                         <?php
                         if(have_posts()): while(have_posts()):the_post(); ?>
-                        <header>
+                        <div class="page-header">
                             <h1><?php the_title(); ?></h1>
-                        </header>
+                        </div>
+                        <div class="meta-box row">
+                            <div class="category span3"><?php the_category(", "); ?></div>
+                            <div class="sns span6">
+                                sns
+                            </div>
+                        </div>
 
                         <div class="well">
                             <div class="code-box">
