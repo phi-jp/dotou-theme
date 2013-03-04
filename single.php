@@ -18,8 +18,11 @@
                             <h1><?php the_title(); ?></h1>
                         </div>
                         <div class="meta-box row">
-                            <div class="category span3"><?php the_category(", "); ?></div>
-                            <div class="sns span6">
+                            <div class="category well span3">
+                                <i class="icon-tag"></i>
+                                <?php the_category(", "); ?>
+                            </div>
+                            <div class="sns well span6">
                                 sns
                             </div>
                         </div>
