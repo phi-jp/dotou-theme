@@ -5,7 +5,7 @@
         <?php get_template_part('head'); ?>
     </head>
 
-    <body>
+    <body <?php body_class($body_class); ?>>
         <?php get_header(); ?>
 
         <div id="wrap">
@@ -13,8 +13,10 @@
                 <div class="row">
                     <div class="span9">
                         <h1>怒濤のテストページ</h1>
-                        <div class="well mini-layout-body">
-                            <script type="text/javascript" src="http://jsdo.it/blogparts/xdue/js?width=465&height=496&view=screenshot"></script>
+                        <div class="well">
+                            <div class="code-box">
+                                <script type="text/javascript" src="http://jsdo.it/blogparts/xdue/js?width=465&height=496&view=screenshot"></script>
+                            </div>
                         </div>
                     </div>
                     <div class="span3">
