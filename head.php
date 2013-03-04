@@ -10,7 +10,7 @@
     @import url("<?php bloginfo('stylesheet_url'); ?>");
 </style>
 
-<script src="<?php bloginfo('template_url'); ?>/main.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 <script>
     // TODO: Javascript
 </script>
@@ -22,6 +22,7 @@
 <!-- css end -->
 
 <!-- less start -->
+<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/tmlib.less" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less" />
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/less/less-1.3.0.min.js"></script>
