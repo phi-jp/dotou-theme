@@ -18,9 +18,11 @@
 						<div class="span3">
 							<img alt="screenshot" src="logo.png" width=400px height=400px>
 						</div>
-						<div class="span6">
+						<div class="span8">
 							<p>
-								怒濤とは世界一のサンプル数を誇るサービスです. dummy dummy dummy dummy dummy dummy dummy dummy 
+								『怒濤』とは, プログラミングを学ぶためのサイトです.
+								本を読むのではなく実際に作って学ぼうをモットーに一緒に学んでいきましょう♪
+								世界一のサンプル数を誇るサービスです.
 							</p>
 							<p>
 								<a class="btn btn-primary btn-large" href="#" target="">
