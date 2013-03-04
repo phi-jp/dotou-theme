@@ -18,6 +18,10 @@
                                 <script type="text/javascript" src="http://jsdo.it/blogparts/xdue/js?width=465&height=496&view=screenshot"></script>
                             </div>
                         </div>
+                        <ul class="pager">
+                            <li class="previous"><a href="">&larr; prev</a></li>
+                            <li class="next"><a href="">next &rarr;</a></li>
+                        </ul>
                     </div>
                     <div class="span3">
                         <div class="well sidebar-nav">
