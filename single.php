@@ -55,6 +55,18 @@
                             ?>
                             </div>
                         </div>
+
+                        <div class="update-box clearfix">
+                            <ul class="pull-right">
+                                <li>Last Update: <?php the_modified_date(); ?> by <a href="<?php echo home_url( '/' ); ?>user/<?php echo get_the_author(); ?>"><?php the_modified_author(); ?></a></li>
+                                <li>Push: <?php the_date( ); ?> by <a href="<?php echo home_url( '/' ); ?>user/<?php echo get_the_author(); ?>"><?php the_modified_author(); ?></a></li>
+                            </ul>
+                        </div>
+
+                        <div class="one-content-box">
+                            <h2>一言コメント</h2>
+                            <?php the_content(); ?>
+                        </div>
                         <?php endwhile; endif; ?>
 
                         <ul class="pager">
