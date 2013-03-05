@@ -27,7 +27,8 @@ $fields =  array(
 );
 $defaults = array(
     'fields'            => apply_filters( 'comment_form_default_fields', $fields ),
-    'comment_field'     => '<p class="comment-form-comment row-fluid"><label for="comment">コメント</label><textarea class="span9" id="comment" name="comment" rows="5" aria-required="true"></textarea></p>'
+    'comment_field'     => '<p class="comment-form-comment row-fluid"><label for="comment">コメント</label><textarea class="span9" id="comment" name="comment" rows="5" aria-required="true"></textarea></p>',
+    'comment_notes_before' => '',
     'class_submit'      => 'btn'
 );
 ?>
