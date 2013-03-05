@@ -29,30 +29,7 @@
 
                         <div class="well">
                             <div class="code-box">
-                            <?php
-                            $jsdoit = get_post_meta( $post->ID, 'jsdoit', true);
-                            $jsdoitThumbnail = get_post_meta( $post->ID, 'jsdoit_thumbnail', true);
-                            $jsdoitType = "screenshot";
-                            if($jsdoitThumbnail === "Auto play"){
-                                $jsdoitType = "play";
-                            }
-                            else if($jsdoitThumbnail === "Screenshot"){
-                                $jsdoitType = "screenshot";
-                            }
-                            else if($jsdoitThumbnail === "Readme"){
-                                $jsdoitType = "";
-                            }
-                            else if($jsdoitThumbnail === "JavaScript"){
-                                $jsdoitType = "javascript";
-                            }
-                            else if($jsdoitThumbnail === "HTML"){
-                                $jsdoitType = "html";
-                            }
-                            else if($jsdoitThumbnail === "CSS"){
-                                $jsdoitType = "css";
-                            }
-                            echo '<script type="text/javascript" src="http://jsdo.it/blogparts/'.$jsdoit.'/js?width=465&height=496&view='.$jsdoitType.'"></script>';
-                            ?>
+                                <?php echo jsdoit_link($post->ID); ?>
                             </div>
                         </div>
 
@@ -97,6 +74,7 @@
                     </div>
                 </div>
             </div>
+            <div id="footer-padding"></div>
         </div>
 
         <?php get_footer(); ?>
