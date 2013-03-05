@@ -25,6 +25,7 @@
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/bootstrap/css/bootstrap.css" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/tmlib.less" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less" />
+<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/single.less" />
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/less/less-1.3.0.min.js"></script>
 <!-- less end -->
 
@@ -43,5 +44,6 @@
 </style>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<?php if(is_singular()) wp_enqueue_script('comment-reply'); ?>
 <?php wp_head(); ?>
 

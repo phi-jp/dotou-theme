@@ -1,0 +1,49 @@
+/*
+ * style.less
+ */
+
+@import "tmlib.less";
+@import "reset.less";
+@import "variables.less";
+
+
+/*
+ * main column
+ */
+.single{
+  .code-box{
+    width: 465px;
+    margin: 0 auto;
+  }
+  /* comment */
+  .comment-box{
+    .comment{
+      padding-top: 15px;
+      margin-top: 15px;
+      border-top: 1px solid #EEE;
+      &:first-children{
+        border-top: none;
+      }
+      .comment-img{
+        margin-right: 15px;
+      }
+    }
+    .children{
+      list-style: none;
+      li{
+        .comment-img{
+          img{
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+    .form-horizontal{
+      background-color: #FFF;
+      border: 1px solid #EEE;
+      border-radius: 4px;
+      padding: 15px;
+    }
+  }
+}
