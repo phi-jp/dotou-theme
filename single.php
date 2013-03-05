@@ -64,7 +64,7 @@
                         </div>
 
                         <div class="one-content-box">
-                            <h2>一言コメント</h2>
+                            <h2>助言</h2>
                             <?php the_content(); ?>
                         </div>
                         <?php endwhile; endif; ?>
