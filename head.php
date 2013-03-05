@@ -44,5 +44,6 @@
 </style>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
+<?php if(is_singular()) wp_enqueue_script('comment-reply'); ?>
 <?php wp_head(); ?>
 

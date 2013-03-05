@@ -73,6 +73,13 @@
                             <li class="previous"><a href="">&larr; prev</a></li>
                             <li class="next"><a href="">next &rarr;</a></li>
                         </ul>
+                        <div class="comment-box">
+                            <div class="well">
+                                <?php
+                                comments_template();
+                                ?>
+                            </div>
+                        </div>
                     </div>
                     <div class="span3">
                         <div class="well sidebar-nav">
