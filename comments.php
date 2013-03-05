@@ -28,10 +28,11 @@ $fields =  array(
 $defaults = array(
     'fields'            => apply_filters( 'comment_form_default_fields', $fields ),
     'comment_field'     => '<p class="comment-form-comment row-fluid"><label for="comment">コメント</label><textarea class="span9" id="comment" name="comment" rows="5" aria-required="true"></textarea></p>'
+    'class_submit'      => 'btn'
 );
 ?>
 <div class="form-horizontal">
     <div class="control-group">
-        <?php comment_form($defaults); ?>
+        <?php user_comment_form($defaults); ?>
     </div>
 </div>
