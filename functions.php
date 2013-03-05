@@ -18,4 +18,3 @@ $GLOBALS['comment'] = $comment; ?>
 </div>
 <?php
 }
-?>
