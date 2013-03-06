@@ -29,13 +29,18 @@
 
                         <div class="well">
                             <div class="code-box">
+                                <style>
+                                iframe {
+                                    border: 0;
+                                }
+                                </style>
                                 <!--
                                 <img src="<?php jsdoit_thumbnail_url($post->ID); ?>" />
                                 -->
                                 <!--
                                 <script src="<?php jsdoit_link($post->ID); ?>"></script>
                                 -->
-                                <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php" width=465 height=496></iframe>
+                                <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php" width=465 height=465></iframe>
                             </div>
                         </div>
 
