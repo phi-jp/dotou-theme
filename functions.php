@@ -137,10 +137,17 @@ function jsdoit_link($post_id = null) {
     
     $jsdoitID   = get_jsdoit_id($post_id);
     $jsdoitView = get_jsdoit_view($post_id);
-    echo '<script type="text/javascript" src="http://jsdo.it/blogparts/'.$jsdoitID.'/js?width=465&height=496&view='.$jsdoitView.'"></script>';
+    echo 'http://jsdo.it/blogparts/'.$jsdoitID.'/js?width=465&height=521&view='.$jsdoitView;
 }
 
-
+function jsdoit_thumbnail_url($post_id = null) {
+    if ( null === $post_id ) $post_id = $id;
+    else $id = $post_id;
+    
+    $jsdoitID = get_jsdoit_id($post_id);
+    
+    echo 'http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/'.$jsdoitID[0].'/'.$jsdoitID[1].'/'.$jsdoitID[2].'/'.$jsdoitID.'.jpg';
+}
 
 
 
