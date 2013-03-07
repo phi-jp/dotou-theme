@@ -102,3 +102,52 @@ function user_comment_form( $args = array(), $post_id = null ) {
         <?php endif; ?>
     <?php
 }
+
+function get_jsdoit_id($post_id = null) {
+    if ( null === $post_id ) $post_id = $id;
+    else $id = $post_id;
+    
+    return get_post_meta($post_id, 'jsdoit', true);
+}
+
+function get_jsdoit_view($post_id = null) {
+    if ( null === $post_id ) $post_id = $id;
+    else $id = $post_id;
+    
+    $jsdoitView = get_post_meta( $post_id, 'jsdoit_thumbnail', true);
+    if (!$jsdoitView) {
+        $jsdoitView = 'Screenshot';
+    }
+    
+    $map = array(
+        'Auto play'     => 'play',
+        'Screenshot'    => 'screenshot',
+        'Readme'        => '',
+        'JavaScript'    => 'javascript',
+        'HTML'          => 'html',
+        'CSS'           => 'css',
+    );
+    
+    return $map[$jsdoitView];
+}
+
+function jsdoit_link($post_id = null) {
+    if ( null === $post_id ) $post_id = $id;
+    else $id = $post_id;
+    
+    $jsdoitID   = get_jsdoit_id($post_id);
+    $jsdoitView = get_jsdoit_view($post_id);
+    echo 'http://jsdo.it/blogparts/'.$jsdoitID.'/js?width=465&height=521&view='.$jsdoitView;
+}
+
+function jsdoit_thumbnail_url($post_id = null) {
+    if ( null === $post_id ) $post_id = $id;
+    else $id = $post_id;
+    
+    $jsdoitID = get_jsdoit_id($post_id);
+    
+    echo 'http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/'.$jsdoitID[0].'/'.$jsdoitID[1].'/'.$jsdoitID[2].'/'.$jsdoitID.'.jpg';
+}
+
+
+
