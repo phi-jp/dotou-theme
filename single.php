@@ -68,13 +68,13 @@
                         <div class="well sidebar-nav">
                             <ul class="nav nav-list">
                                 <li class="nav-header">nav title</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
                                 <li class="nav-header">nav title</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
                             </ul>
                         </div>
                     </div>
