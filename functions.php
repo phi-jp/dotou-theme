@@ -106,19 +106,19 @@ function user_comment_form( $args = array(), $post_id = null ) {
 function get_jsdoit_id($post_id = null) {
     if ( null === $post_id ) $post_id = $id;
     else $id = $post_id;
-    
+
     return get_post_meta($post_id, 'jsdoit', true);
 }
 
 function get_jsdoit_view($post_id = null) {
     if ( null === $post_id ) $post_id = $id;
     else $id = $post_id;
-    
+
     $jsdoitView = get_post_meta( $post_id, 'jsdoit_thumbnail', true);
     if (!$jsdoitView) {
         $jsdoitView = 'Screenshot';
     }
-    
+
     $map = array(
         'Auto play'     => 'play',
         'Screenshot'    => 'screenshot',
@@ -127,14 +127,14 @@ function get_jsdoit_view($post_id = null) {
         'HTML'          => 'html',
         'CSS'           => 'css',
     );
-    
+
     return $map[$jsdoitView];
 }
 
 function jsdoit_link($post_id = null) {
     if ( null === $post_id ) $post_id = $id;
     else $id = $post_id;
-    
+
     $jsdoitID   = get_jsdoit_id($post_id);
     $jsdoitView = get_jsdoit_view($post_id);
     echo 'http://jsdo.it/blogparts/'.$jsdoitID.'/js?width=465&height=521&view='.$jsdoitView;
@@ -143,11 +143,28 @@ function jsdoit_link($post_id = null) {
 function jsdoit_thumbnail_url($post_id = null) {
     if ( null === $post_id ) $post_id = $id;
     else $id = $post_id;
-    
+
     $jsdoitID = get_jsdoit_id($post_id);
-    
+
     echo 'http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/'.$jsdoitID[0].'/'.$jsdoitID[1].'/'.$jsdoitID[2].'/'.$jsdoitID.'.jpg';
 }
 
+// ソーシャルのシェアアイコンを取得
+function getSNS($link){ ?>
+<ul class="socialcount" data-url="<?php echo $link ?>" data-counts="true">
+    <li class="twitter">
+        <a href="https://twitter.com/intent/tweet?text=<?php echo $link ?>" title="Share on Twitter"><i class="icon-twitter-rect"></i><span class="count">Tweet</span></a>
+    </li>
+    <li class="facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $link ?>" title="Share on Facebook"><i class="icon-facebook-rect"></i><span class="count">Like</span></a>
+    </li>
+    <li class="hatebu">
+        <a href="" title="Share on HatenaBookmark"><i class="icon-vkontakte-rect"></i><span class="count">Hatena</span></a>
+    </li>
+    <li class="googleplus">
+        <a href="https://plus.google.com/share?url=<?php echo $link ?>" title="Share on Google Plus"><i class="icon-googleplus-rect"></i><span class="count">+1</span></a>
+    </li>
+</ul>
+<?php }
 
 

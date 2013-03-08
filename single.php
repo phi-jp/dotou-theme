@@ -22,8 +22,8 @@
                                 <i class="icon-tag"></i>
                                 <?php the_category(", "); ?>
                             </div>
-                            <div class="sns well span6">
-                                sns
+                            <div class="sns-share well span6">
+                                <?php getSNS(get_permalink()); ?>
                             </div>
                         </div>
 
