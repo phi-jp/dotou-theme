@@ -153,16 +153,16 @@ function jsdoit_thumbnail_url($post_id = null) {
 function getSNS($link){ ?>
 <ul class="socialcount" data-url="<?php echo $link ?>" data-counts="true">
     <li class="twitter">
-        <a href="https://twitter.com/intent/tweet?text=<?php echo $link ?>" title="Share on Twitter"><i class="icon-twitter-rect"></i><span class="count">Tweet</span></a>
+        <a href="https://twitter.com/intent/tweet?text=<?php echo $link ?>" title="Share on Twitter"><i class="icon-twitter-bird"></i><span class="count">Tweet</span></a>
     </li>
     <li class="facebook">
         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $link ?>" title="Share on Facebook"><i class="icon-facebook-rect"></i><span class="count">Like</span></a>
     </li>
     <li class="hatebu">
-        <a href="" title="Share on HatenaBookmark"><i class="icon-vkontakte-rect"></i><span class="count">Hatena</span></a>
+        <a href="" title="Share on HatenaBookmark"><i class="icon-vkontakte-rect-1"></i><span class="count">Hatena</span></a>
     </li>
     <li class="googleplus">
-        <a href="https://plus.google.com/share?url=<?php echo $link ?>" title="Share on Google Plus"><i class="icon-googleplus-rect"></i><span class="count">+1</span></a>
+        <a href="https://plus.google.com/share?url=<?php echo $link ?>" title="Share on Google Plus"><i class="icon-googleplus-rect-1"></i><span class="count">+1</span></a>
     </li>
 </ul>
 <?php }

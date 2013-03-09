@@ -18,11 +18,11 @@
                             <h1><?php the_title(); ?></h1>
                         </div>
                         <div class="meta-box row">
-                            <div class="category well span3">
+                            <div class="category span3">
                                 <i class="icon-tag"></i>
                                 <?php the_category(", "); ?>
                             </div>
-                            <div class="sns-share well span6">
+                            <div class="sns-share span6 clearfix">
                                 <?php getSNS(get_permalink()); ?>
                             </div>
                         </div>
