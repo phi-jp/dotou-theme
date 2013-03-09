@@ -52,9 +52,11 @@
                         </div>
                         <?php endwhile; endif; ?>
 
+
+
                         <ul class="pager">
-                            <li class="previous"><a href="">&larr; prev</a></li>
-                            <li class="next"><a href="">next &rarr;</a></li>
+                            <li class="previous"><?php previous_post_link('%link', '&larr; prev', false); ?></li>
+                            <li class="next"><?php next_post_link('%link', 'next &rarr;', false); ?></li>
                         </ul>
                         <div class="comment-box">
                             <div class="well">
