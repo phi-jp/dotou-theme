@@ -11,7 +11,7 @@
         <div id="wrap">
             <div class="container">
                 <div class="row">
-                    <div class="span9">
+                    <div class="content span9">
                         <?php
                         if(have_posts()): while(have_posts()):the_post(); ?>
                         <div class="page-header">
@@ -46,27 +46,25 @@
                             </ul>
                         </div>
 
-                        <div class="one-content-box">
+                        <div class="one-advice-box">
                             <h2>助言</h2>
                             <?php the_content(); ?>
                         </div>
                         <?php endwhile; endif; ?>
 
-
-
                         <ul class="pager">
                             <li class="previous"><?php previous_post_link('%link', '&larr; prev', false); ?></li>
                             <li class="next"><?php next_post_link('%link', 'next &rarr;', false); ?></li>
                         </ul>
+
                         <div class="comment-box">
                             <div class="well">
-                                <?php
-                                comments_template();
-                                ?>
+                                <?php comments_template(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="span3">
+
+                    <div class="sidebar span3">
                         <div class="well sidebar-nav">
                             <ul class="nav nav-list">
                                 <li class="nav-header">nav title</li>
