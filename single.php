@@ -11,19 +11,19 @@
         <div id="wrap">
             <div class="container">
                 <div class="row">
-                    <div class="span9">
+                    <div class="content span9">
                         <?php
                         if(have_posts()): while(have_posts()):the_post(); ?>
                         <div class="page-header">
                             <h1><?php the_title(); ?></h1>
                         </div>
                         <div class="meta-box row">
-                            <div class="category well span3">
+                            <div class="category span3">
                                 <i class="icon-tag"></i>
                                 <?php the_category(", "); ?>
                             </div>
-                            <div class="sns well span6">
-                                sns
+                            <div class="sns-share span6 clearfix">
+                                <?php getSNS(get_permalink()); ?>
                             </div>
                         </div>
 
@@ -34,13 +34,8 @@
                                     border: 0;
                                 }
                                 </style>
-                                <!--
-                                <img src="<?php jsdoit_thumbnail_url($post->ID); ?>" />
-                                -->
-                                <!--
-                                <script src="<?php jsdoit_link($post->ID); ?>"></script>
-                                -->
-                                <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php" width=465 height=465></iframe>
+                                <!-- <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php?user=dotou&id=<?php echo get_jsdoit_id($post->ID); ?>" width=465 height=465></iframe> -->
+                                <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php?user=dotou&id=9iJb" width=465 height=465></iframe>
                             </div>
                         </div>
 
@@ -51,35 +46,35 @@
                             </ul>
                         </div>
 
-                        <div class="one-content-box">
+                        <div class="one-advice-box">
                             <h2>助言</h2>
                             <?php the_content(); ?>
                         </div>
                         <?php endwhile; endif; ?>
 
                         <ul class="pager">
-                            <li class="previous"><a href="">&larr; prev</a></li>
-                            <li class="next"><a href="">next &rarr;</a></li>
+                            <li class="previous"><?php previous_post_link('%link', '&larr; prev', false); ?></li>
+                            <li class="next"><?php next_post_link('%link', 'next &rarr;', false); ?></li>
                         </ul>
+
                         <div class="comment-box">
                             <div class="well">
-                                <?php
-                                comments_template();
-                                ?>
+                                <?php comments_template(); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="span3">
+
+                    <div class="sidebar span3">
                         <div class="well sidebar-nav">
                             <ul class="nav nav-list">
                                 <li class="nav-header">nav title</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
                                 <li class="nav-header">nav title</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
-                                <li>dummy</li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
+                                <li><a href="">dummy</a></li>
                             </ul>
                         </div>
                     </div>
