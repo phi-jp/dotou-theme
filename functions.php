@@ -167,4 +167,5 @@ function getSNS($link){ ?>
 </ul>
 <?php }
 
-
+// テーマオプション機能追加
+require_once 'lib/theme-options/theme-options.php';
