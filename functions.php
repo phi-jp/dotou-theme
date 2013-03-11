@@ -19,7 +19,6 @@ $GLOBALS['comment'] = $comment; ?>
 
 <?php }
 
-
 function user_comment_form( $args = array(), $post_id = null ) {
     global $id;
 
@@ -103,6 +102,7 @@ function user_comment_form( $args = array(), $post_id = null ) {
     <?php
 }
 
+
 function get_jsdoit_id($post_id = null) {
     if ( null === $post_id ) $post_id = $id;
     else $id = $post_id;
@@ -149,6 +149,7 @@ function jsdoit_thumbnail_url($post_id = null) {
     echo 'http://jsdo-it-static-contents.s3.amazonaws.com/images/capture/'.$jsdoitID[0].'/'.$jsdoitID[1].'/'.$jsdoitID[2].'/'.$jsdoitID.'.jpg';
 }
 
+
 // ソーシャルのシェアアイコンを取得
 function getSNS($link){ ?>
 <ul class="socialcount" data-url="<?php echo $link ?>" data-counts="true">
@@ -167,5 +168,47 @@ function getSNS($link){ ?>
 </ul>
 <?php }
 
+
+// デバック用
+function pr($val){
+    echo "<pre>";
+    print_r($val);
+    echo "</pre>";
+}
+
+
 // テーマオプション機能追加
 require_once 'lib/theme-options/theme-options.php';
+
+// テーマオプションのキーネーム
+function getThemeOptionsKeyName(){
+    return 'dotou_option';
+}
+
+// テーマオプションから言語のリストを取得
+function getLanguageList(){
+    $key_name = getThemeOptionsKeyName();
+    $options = get_option( 'dotou_theme_options' );
+    return explode( "\n", $options[$key_name] );
+}
+
+// 言語リストの章を取得
+function getLanguageChapter(){
+    $options = get_option( 'dotou_theme_options' );
+    $list_category = array("_syuren", "_tanren", "_jukuren");
+    $list = getLanguageList();
+    $data = array();
+    foreach ($list as $key => $value) {
+        $value = trim($value);
+        $array_key = getThemeOptionsKeyName()."_".$value;
+        $tmp = array();
+        foreach ($list_category as $key2 => $value2) {
+            // $tmp = explode( "\n", $options[$array_key.$value2] );
+            array_push($tmp, explode( "\n", $options[$array_key.$value2] ));
+        }
+        // array_push($data, $tmp);
+        $data[$value] = $tmp;
+    }
+
+    return $data;
+}
