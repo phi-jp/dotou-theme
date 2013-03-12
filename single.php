@@ -27,13 +27,8 @@
                             </div>
                         </div>
 
-                        <div class="well">
+                        <div class="well preview">
                             <div class="code-box">
-                                <style>
-                                iframe {
-                                    border: 0;
-                                }
-                                </style>
                                 <!--
                                 <img src="<?php jsdoit_thumbnail_url($post->ID); ?>" />
                                 -->
