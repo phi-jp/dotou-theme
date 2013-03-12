@@ -177,6 +177,9 @@ function pr($val){
 }
 
 
+/*
+ * テーマオプション
+ */
 // テーマオプション機能追加
 require_once 'lib/theme-options/theme-options.php';
 
@@ -192,8 +195,14 @@ function getLanguageList(){
     return explode( "\n", $options[$key_name] );
 }
 
-// 言語リストの章を取得
-function getLanguageChapter(){
+// 特定の言語を取得
+function getLanguage($langage){
+    $list = getLanguageCategory();
+    return $list[$langage];
+}
+
+// 言語のカテゴリを取得
+function getLanguageCategory(){
     $options = get_option( 'dotou_theme_options' );
     $list_category = array("_syuren", "_tanren", "_jukuren");
     $list = getLanguageList();
@@ -203,12 +212,16 @@ function getLanguageChapter(){
         $array_key = getThemeOptionsKeyName()."_".$value;
         $tmp = array();
         foreach ($list_category as $key2 => $value2) {
-            // $tmp = explode( "\n", $options[$array_key.$value2] );
             array_push($tmp, explode( "\n", $options[$array_key.$value2] ));
         }
-        // array_push($data, $tmp);
         $data[$value] = $tmp;
     }
 
     return $data;
+}
+
+// 言語の章を取得
+function getLanguageChapter($language, $num){
+    $list = getLanguage($language);
+    return $list[$num];
 }
