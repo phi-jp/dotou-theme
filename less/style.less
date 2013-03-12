@@ -13,30 +13,33 @@
 @page-width: 1100px;
 
 
-/*  
+/*
  * base
  */
 * {
   margin: 0px;
   padding: 0px;
-  
+
   #tm .box-sizing(border-box);
 }
 
+html{
+  font-size: @font-size;
+}
 html, body {
   height: 100%;
 }
 
 body {
   font-family: "Meiryo", "メイリオ", "ヒラギノ角ゴ Pro W3", sans-serif;
-  font-size: @font-size;
+  #tm .font-size(13);
   line-height: 1.5em;
-  
+
   a {
     text-decoration: none;
     color: hsl(220, 100%, 50%);
   }
-  
+
   a:visited {
     color: hsl(260, 90%, 50%);
   }
@@ -69,7 +72,7 @@ body>.container {
 .detail-block {
   padding: 5px;
   h2 {
-    font-size: 24px;
+    #tm .font-size(24);
     line-height: 36px;
   }
 
@@ -107,6 +110,25 @@ body>.container {
       }
     }
   }
-
 }
 
+// ソーシャルのシェアボタン
+.socialcount{
+  li{
+    padding: 3px 0px;
+    //width: 100px;
+    a{
+      i{
+        color: #FFF;
+      }
+    }
+    .button{
+      bottom: -4px;
+    }
+    &.facebook{
+      iframe{
+        width: 61px;
+      }
+    }
+  }
+}
