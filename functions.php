@@ -177,6 +177,23 @@ function pr($val){
 }
 
 
+/* 特定カテゴリの記事を取得 */
+function getCategroyPost($cat_id){
+    global $post;
+    $tmp_post = $post;
+    $myposts = get_posts('numberposts=-1&category='.$cat_id);
+    $data = array();
+    if($myposts): foreach($myposts as $posts): setup_postdata($posts);
+        $tmp = $posts;
+        $tmp->ChapterName = get_post_meta($posts->ID, 'ChapterName', true);
+        $tmp->ChapterNumber = get_post_meta($posts->ID, 'ChapterNumber', true);
+        array_push($data, $tmp);
+    endforeach; endif;
+    wp_reset_postdata();
+    $post = $tmp_post;
+    return $data;
+}
+
 /*
  * テーマオプション
  */

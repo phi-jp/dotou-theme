@@ -13,15 +13,16 @@
                 <div class="row">
                     <div class="content span9">
                     <?php
-                        $this_cat = get_category($cat);
-                        $is_parent = get_category_children($cat);
-                        if( $is_parent ){
-                            get_template_part( "archive-parent" );
-                        }
-                        else{
-                            get_template_part( "archive-children" );
-                        }
+                        $category = get_the_category();
+                        $category = $category[0];
+                        $parentName = get_category_parents($category->category_parent, false, '', false);
                     ?>
+
+                        <div class="page-header">
+                            <h1><?php echo $parentName; ?></h1>
+                        </div>
+                        <div class="category_list"></div>
+                        <div class="chapter_list well"></div>
                     </div>
 
                     <div class="sidebar span3">

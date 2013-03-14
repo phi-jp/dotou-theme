@@ -14,14 +14,23 @@
                     <div class="content span9">
                     <?php
                         $this_cat = get_category($cat);
-                        $is_parent = get_category_children($cat);
-                        if( $is_parent ){
-                            get_template_part( "archive-parent" );
-                        }
-                        else{
-                            get_template_part( "archive-children" );
-                        }
+                        $parentName = get_category_parents($this_cat->category_parent, false, '', false);
+                        pr(getLanguageChapter($parentName, $this_cat->cat_name));
+                        $postData = getCategroyPost($this_cat->term_id);
+                        pr($postData);
                     ?>
+
+                        <div class="page-header">
+                            <h1><?php echo $parentName." ".$this_cat->cat_name; ?></h1>
+                        </div>
+                        <div class="category_list"></div>
+                        <div class="chapter_list well">
+                            <?php
+                            foreach ($postData as $key => $value) {
+                                echo '<h2><a href="'.$value->guid.'">'.$value->post_title.'</a></h2>';
+                            }
+                            ?>
+                        </div>
                     </div>
 
                     <div class="sidebar span3">
