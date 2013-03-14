@@ -204,15 +204,17 @@ function getLanguage($langage){
 // 言語のカテゴリを取得
 function getLanguageCategory(){
     $options = get_option( 'dotou_theme_options' );
-    $list_category = array("_syuren", "_tanren", "_jukuren");
+    $category_list = array("_syuren", "_tanren", "_jukuren");
+    $category_name = array("修練", "鍛錬", "熟練");
     $list = getLanguageList();
     $data = array();
     foreach ($list as $key => $value) {
         $value = trim($value);
         $array_key = getThemeOptionsKeyName()."_".$value;
         $tmp = array();
-        foreach ($list_category as $key2 => $value2) {
-            array_push($tmp, explode( "\n", $options[$array_key.$value2] ));
+        foreach ($category_list as $key2 => $value2) {
+            $tmp[$category_name[$key2]] = explode( "\n", $options[$array_key.$value2] );
+            // array_push($tmp, explode( "\n", $options[$array_key.$value2] ));
         }
         $data[$value] = $tmp;
     }
