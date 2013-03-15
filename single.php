@@ -29,15 +29,6 @@
 
                         <div class="well preview">
                             <div class="code-box">
-<<<<<<< HEAD
-                                <!--
-                                <img src="<?php jsdoit_thumbnail_url($post->ID); ?>" />
-                                -->
-                                <!--
-                                <script src="<?php jsdoit_link($post->ID); ?>"></script>
-                                -->
-                                <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php" width=465 height=465></iframe>
-=======
                                 <style>
                                 iframe {
                                     border: 0;
@@ -45,15 +36,7 @@
                                 </style>
                                 <!-- <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php?user=dotou&id=<?php echo get_jsdoit_id($post->ID); ?>" width=465 height=465></iframe> -->
                                 <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php?user=dotou&id=9iJb" width=465 height=465></iframe>
->>>>>>> 78ef1b44e5f82f52f7823f235c05591e5f32c960
                             </div>
-                        </div>
-
-                        <div class="update-box clearfix">
-                            <ul class="pull-right">
-                                <li>Last Update: <?php the_modified_date(); ?> by <a href="<?php echo home_url( '/' ); ?>user/<?php echo get_the_author(); ?>"><?php the_modified_author(); ?></a></li>
-                                <li>Push: <?php the_date( ); ?> by <a href="<?php echo home_url( '/' ); ?>user/<?php echo get_the_author(); ?>"><?php the_modified_author(); ?></a></li>
-                            </ul>
                         </div>
 
                         <div class="one-advice-box">

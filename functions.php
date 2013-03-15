@@ -177,6 +177,60 @@ function pr($val){
 }
 
 
+// 特定カテゴリの記事を取得
+function getCategoryPost($cat_id){
+    global $post;
+    $tmp_post = $post;
+    $myposts = get_posts('numberposts=-1&category='.$cat_id);
+    $data = array();
+    if($myposts): foreach($myposts as $posts): setup_postdata($posts);
+        $tmp = $posts;
+        $tmp->ChapterName = get_post_meta($posts->ID, 'ChapterName', true);
+        $tmp->ChapterNumber = get_post_meta($posts->ID, 'ChapterNumber', true);
+        array_push($data, $tmp);
+    endforeach; endif;
+    wp_reset_postdata();
+    $post = $tmp_post;
+    return $data;
+}
+
+// 記事を章の順にソートして取得
+function getSortChapterName($post_data, $chapter_list){
+    $sort_data = array();
+    foreach ($chapter_list as $key => $value) {
+        $tmp = array();
+        foreach ($post_data as $key2 => $value2) {
+            if( $value2->ChapterName === $value ){
+                array_push($tmp, $value2);
+            }
+        }
+        if(empty($tmp)){
+            $tmp = array("ChapterName" => $value);
+        }
+        array_push($sort_data, $tmp);
+    }
+
+    return $sort_data;
+}
+
+// 記事を章番号順にソートして取得
+function getSortChapterNumber($post_data){
+    $sort_data = array();
+    foreach ($post_data as $key => $value) {
+        if(is_array($value)){
+            $sort_key = array();
+            foreach ($value as $key2 => $value2) {
+                $sort_key[$key2] = $value2->ChapterNumber;
+            }
+            array_multisort($sort_key, SORT_ASC, $value);
+            array_push($sort_data, $value);
+        }
+    }
+
+    return $sort_data;
+}
+
+
 /*
  * テーマオプション
  */
@@ -204,15 +258,18 @@ function getLanguage($langage){
 // 言語のカテゴリを取得
 function getLanguageCategory(){
     $options = get_option( 'dotou_theme_options' );
-    $list_category = array("_syuren", "_tanren", "_jukuren");
+    $category_list = array("_syuren", "_tanren", "_jukuren");
+    $category_name = array("修練", "鍛錬", "熟練");
     $list = getLanguageList();
     $data = array();
     foreach ($list as $key => $value) {
         $value = trim($value);
         $array_key = getThemeOptionsKeyName()."_".$value;
         $tmp = array();
-        foreach ($list_category as $key2 => $value2) {
-            array_push($tmp, explode( "\n", $options[$array_key.$value2] ));
+        foreach ($category_list as $key2 => $value2) {
+            $chap = explode( "\n", $options[$array_key.$value2] );
+            $chap = preg_replace("/\r|\n/", "", $chap);
+            $tmp[$category_name[$key2]] = $chap;
         }
         $data[$value] = $tmp;
     }

@@ -1,0 +1,28 @@
+/*
+ * archive.less
+ */
+
+@import "tmlib.less";
+@import "reset.less";
+@import "variables.less";
+
+
+
+/*
+ * main column
+ */
+.archive{
+  .content{
+    .chapter_list{
+      ol{
+        margin: 0 0 30px 45px;
+        li{
+          padding: 2px;
+          &.unactive{
+            #tm .unactive();
+          }
+        }
+      }
+    }
+  }
+}

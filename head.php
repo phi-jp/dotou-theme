@@ -30,7 +30,15 @@
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/tmlib.less" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/SocialCount/less/socialcount.min.less" />
 <link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/style.less" />
-<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_url'); ?>/less/single.less" />
+<?php
+if(is_single()){
+  echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/single.less" />';
+}
+else if(is_archive()){
+  echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/archive.less" />';
+}
+?>
+
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/less/less-1.3.0.min.js"></script>
 <!-- less end -->
 
