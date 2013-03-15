@@ -230,8 +230,9 @@ function getLanguageCategory(){
         $array_key = getThemeOptionsKeyName()."_".$value;
         $tmp = array();
         foreach ($category_list as $key2 => $value2) {
-            $tmp[$category_name[$key2]] = explode( "\n", $options[$array_key.$value2] );
-            // array_push($tmp, explode( "\n", $options[$array_key.$value2] ));
+            $chap = explode( "\n", $options[$array_key.$value2] );
+            $chap = preg_replace("/\r|\n/", "", $chap);
+            $tmp[$category_name[$key2]] = $chap;
         }
         $data[$value] = $tmp;
     }
