@@ -204,6 +204,9 @@ function getSortChapterName($post_data, $chapter_list){
                 array_push($tmp, $value2);
             }
         }
+        if(empty($tmp)){
+            $tmp = array("ChapterName" => $value);
+        }
         array_push($sort_data, $tmp);
     }
 
