@@ -177,8 +177,8 @@ function pr($val){
 }
 
 
-/* 特定カテゴリの記事を取得 */
-function getCategroyPost($cat_id){
+// 特定カテゴリの記事を取得
+function getCategoryPost($cat_id){
     global $post;
     $tmp_post = $post;
     $myposts = get_posts('numberposts=-1&category='.$cat_id);
@@ -193,6 +193,40 @@ function getCategroyPost($cat_id){
     $post = $tmp_post;
     return $data;
 }
+
+// 記事を章の順にソートして取得
+function getSortChapterName($post_data, $chapter_list){
+    $sort_data = array();
+    foreach ($chapter_list as $key => $value) {
+        $tmp = array();
+        foreach ($post_data as $key2 => $value2) {
+            if( $value2->ChapterName === $value ){
+                array_push($tmp, $value2);
+            }
+        }
+        array_push($sort_data, $tmp);
+    }
+
+    return $sort_data;
+}
+
+// 記事を章番号順にソートして取得
+function getSortChapterNumber($post_data){
+    $sort_data = array();
+    foreach ($post_data as $key => $value) {
+        if(is_array($value)){
+            $sort_key = array();
+            foreach ($value as $key2 => $value2) {
+                $sort_key[$key2] = $value2->ChapterNumber;
+            }
+            array_multisort($sort_key, SORT_ASC, $value);
+            array_push($sort_data, $value);
+        }
+    }
+
+    return $sort_data;
+}
+
 
 /*
  * テーマオプション
