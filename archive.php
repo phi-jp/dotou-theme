@@ -25,17 +25,20 @@
                     </div>
 
                     <div class="sidebar span3">
-                        <div class="well sidebar-nav">
-                            <ul class="nav nav-list">
-                                <li class="nav-header">nav title</li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li class="nav-header">nav title</li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                            </ul>
+                        <div class="well">
+                            <div class="book"></div>
+                        </div>
+                        <div class="well">
+                            <div class="book"></div>
+                        </div>
+                        <div class="well">
+                            <div class="book"></div>
+                        </div>
+                        <div class="well">
+                            <div class="book"></div>
+                        </div>
+                        <div class="well">
+                            <div class="book"></div>
                         </div>
                     </div>
                 </div>
