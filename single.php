@@ -46,8 +46,8 @@
                         <?php endwhile; endif; ?>
 
                         <ul class="pager">
-                            <li class="previous"><?php previous_post_link('%link', '&larr; prev', false); ?></li>
-                            <li class="next"><?php next_post_link('%link', 'next &rarr;', false); ?></li>
+                            <li class="previous"><?php previous_post_link('%link', '&larr; prev', true); ?></li>
+                            <li class="next"><?php next_post_link('%link', 'next &rarr;', true); ?></li>
                         </ul>
 
                         <div class="comment-box">
