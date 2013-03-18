@@ -20,7 +20,7 @@
             echo '<h2>'.$value[0]->ChapterName.'</h2>';
             echo '<ol>';
             foreach ($value as $key2 => $value2) {
-                echo '<li><a href="'.$value2->guid.'">'.$value2->post_title.'</a></li>';
+                echo '<li><a href="'.$value2->link.'">'.$value2->post_title.'</a></li>';
             }
             echo '</ol>';
         }
