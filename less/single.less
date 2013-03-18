@@ -15,16 +15,22 @@
   .content{
     h1{
       font-weight: normal;
-    }
-    h2{
       #tm .font-size(24);
     }
+    h2{
+      #tm .font-size(16);
+    }
     h3{
-      #tm .font-size(18);
+      #tm .font-size(14);
+    }
+    .page-header{
+      margin: 20px 0;
+      h1{
+        margin: 0;
+      }
     }
     .meta-box{
-      margin-top: -10px;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       .socialcount{
         float: right;
       }
@@ -80,6 +86,21 @@
           code{
             #tm .autoFoldingBack();
           }
+        }
+      }
+    }
+  }
+  .sidebar{
+    margin-top: 30px;
+    h2{
+      #tm .font-size(15);
+      line-height: 1.5;
+      margin-top: 0;
+    }
+    ul{
+      li{
+        &.unactive{
+          #tm .unactive();
         }
       }
     }
