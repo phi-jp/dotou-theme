@@ -185,6 +185,7 @@ function getCategoryPost($cat_id){
     $data = array();
     if($myposts): foreach($myposts as $posts): setup_postdata($posts);
         $tmp = $posts;
+        $tmp->link = get_bloginfo("url")."/?p=".$posts->ID;
         $tmp->ChapterName = get_post_meta($posts->ID, 'ChapterName', true);
         $tmp->ChapterNumber = get_post_meta($posts->ID, 'ChapterNumber', true);
         array_push($data, $tmp);

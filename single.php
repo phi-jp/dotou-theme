@@ -58,18 +58,7 @@
                     </div>
 
                     <div class="sidebar span3">
-                        <div class="well sidebar-nav">
-                            <ul class="nav nav-list">
-                                <li class="nav-header">nav title</li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li class="nav-header">nav title</li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                            </ul>
-                        </div>
+                        <?php get_sidebar(); ?>
                     </div>
                 </div>
             </div>
