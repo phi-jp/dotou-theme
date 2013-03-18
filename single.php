@@ -38,10 +38,19 @@
                                 <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php?user=dotou&id=9iJb" width=465 height=465></iframe>
                             </div>
                         </div>
-
-                        <div class="one-advice-box">
-                            <h2>助言</h2>
-                            <?php the_content(); ?>
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" data-toggle="tab">助言</a></li>
+                                <li><a href="#tab2" data-toggle="tab">差分</a></li>
+                                <li><a href="#tab3" data-toggle="tab">更新日</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <?php the_content(); ?>
+                                </div>
+                                <div class="tab-pane" id="tab2">あああああああああああ</div>
+                                <div class="tab-pane" id="tab3">いいいいいいいいいい</div>
+                            </div>
                         </div>
                         <?php endwhile; endif; ?>
 
