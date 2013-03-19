@@ -1,6 +1,6 @@
 <?php
 $key_name = 'dotou_option';
-$lang_category = array("_syuren", "_tanren", "_jukuren");
+$lang_category = array("_shuren", "_tanren", "_jukuren");
 
 add_action( 'admin_init', 'theme_options_init' );
 add_action( 'admin_menu', 'theme_options_add_page' );

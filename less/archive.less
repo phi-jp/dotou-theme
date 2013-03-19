@@ -13,6 +13,23 @@
  */
 .archive{
   .content{
+    h1{
+      font-weight: normal;
+      #tm .font-size(24);
+    }
+    h2{
+      font-weight: normal;
+      #tm .font-size(20);
+    }
+    h3{
+      #tm .font-size(14);
+    }
+    .page-header{
+      margin: 20px 0;
+      h1{
+        margin: 0;
+      }
+    }
     .chapter_list{
       ol{
         margin: 0 0 30px 45px;
@@ -21,8 +38,19 @@
           &.unactive{
             #tm .unactive();
           }
+          a{
+            #tm .font-size(15);
+          }
         }
       }
+    }
+  }
+  .sidebar{
+    margin-top: 30px;
+    .book{
+      width: 100%;
+      height: 180px;
+      background-color: #FFF;
     }
   }
 }

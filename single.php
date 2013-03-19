@@ -38,16 +38,25 @@
                                 <iframe src="http://dotou.lugn-design.com/wp-content/themes/dotou-theme/jsdoit.php?user=dotou&id=9iJb" width=465 height=465></iframe>
                             </div>
                         </div>
-
-                        <div class="one-advice-box">
-                            <h2>助言</h2>
-                            <?php the_content(); ?>
+                        <div class="tabbable">
+                            <ul class="nav nav-tabs">
+                                <li class="active"><a href="#tab1" data-toggle="tab">助言</a></li>
+                                <li><a href="#tab2" data-toggle="tab">差分</a></li>
+                                <li><a href="#tab3" data-toggle="tab">更新日</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div class="tab-pane active" id="tab1">
+                                    <?php the_content(); ?>
+                                </div>
+                                <div class="tab-pane" id="tab2">あああああああああああ</div>
+                                <div class="tab-pane" id="tab3">いいいいいいいいいい</div>
+                            </div>
                         </div>
                         <?php endwhile; endif; ?>
 
                         <ul class="pager">
-                            <li class="previous"><?php previous_post_link('%link', '&larr; prev', false); ?></li>
-                            <li class="next"><?php next_post_link('%link', 'next &rarr;', false); ?></li>
+                            <li class="previous"><?php previous_post_link('%link', '&larr; prev', true); ?></li>
+                            <li class="next"><?php next_post_link('%link', 'next &rarr;', true); ?></li>
                         </ul>
 
                         <div class="comment-box">
@@ -58,18 +67,7 @@
                     </div>
 
                     <div class="sidebar span3">
-                        <div class="well sidebar-nav">
-                            <ul class="nav nav-list">
-                                <li class="nav-header">nav title</li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li class="nav-header">nav title</li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                                <li><a href="">dummy</a></li>
-                            </ul>
-                        </div>
+                        <?php get_sidebar(); ?>
                     </div>
                 </div>
             </div>

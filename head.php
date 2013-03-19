@@ -10,20 +10,11 @@
     @import url("<?php bloginfo('stylesheet_url'); ?>");
 </style>
 
-<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-<script>
-    // TODO: Javascript
-</script>
-
 <!-- css start -->
 <!--
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/style.css" />
 -->
 <!-- css end -->
-
-<!-- jQuery -->
-<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-<!-- jQuery -->
 
 <!-- less start -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/bootstrap/css/bootstrap.css" />
@@ -39,8 +30,19 @@ else if(is_archive()){
 }
 ?>
 
+<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+<script>
+    // TODO: Javascript
+</script>
+
+<!-- jQuery -->
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- jQuery -->
+
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/plugins/less/less-1.3.0.min.js"></script>
 <!-- less end -->
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
 
 <!-- prettify -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/plugins/prettify/prettify.css" />
