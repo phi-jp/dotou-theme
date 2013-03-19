@@ -259,8 +259,8 @@ function getLanguage($langage){
 // 言語のカテゴリを取得
 function getLanguageCategory(){
     $options = get_option( 'dotou_theme_options' );
-    $category_list = array("_syuren", "_tanren", "_jukuren");
-    $category_name = array("修練", "鍛錬", "熟練");
+    $category_list = array("_shuren", "_tanren", "_jukuren");
+    $category_name = array("修練", "鍛練", "熟練");
     $list = getLanguageList();
     $data = array();
     foreach ($list as $key => $value) {
