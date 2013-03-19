@@ -185,6 +185,7 @@ function getCategoryPost($cat_id){
     $data = array();
     if($myposts): foreach($myposts as $posts): setup_postdata($posts);
         $tmp = $posts;
+        $tmp->link = get_bloginfo("url")."/?p=".$posts->ID;
         $tmp->ChapterName = get_post_meta($posts->ID, 'ChapterName', true);
         $tmp->ChapterNumber = get_post_meta($posts->ID, 'ChapterNumber', true);
         array_push($data, $tmp);
@@ -258,8 +259,8 @@ function getLanguage($langage){
 // 言語のカテゴリを取得
 function getLanguageCategory(){
     $options = get_option( 'dotou_theme_options' );
-    $category_list = array("_syuren", "_tanren", "_jukuren");
-    $category_name = array("修練", "鍛錬", "熟練");
+    $category_list = array("_shuren", "_tanren", "_jukuren");
+    $category_name = array("修練", "鍛練", "熟練");
     $list = getLanguageList();
     $data = array();
     foreach ($list as $key => $value) {
