@@ -284,3 +284,43 @@ function getLanguageChapter($language, $num){
     $list = getLanguage($language);
     return $list[$num];
 }
+
+
+// アイキャッチを追加
+add_theme_support( 'post-thumbnails' );
+set_post_thumbnail_size( 180, 180, true );
+
+
+/* カスタム投稿タイプを追加 */
+add_action( 'init', 'create_post_type' );
+function create_post_type() {
+    // カスタム投稿タイプ amazon を追加
+    register_post_type( 'amazon',
+        array(
+            'labels' => array(
+                'name' => __( 'amazon' ),
+                'singular_name' => __( 'amazon' )
+            ),
+            'supports' => array(
+                'title',
+                'editor',
+                'thumbnail'
+            ),
+            'public' => true,
+            'menu_position' => 4,
+        )
+    );
+
+    register_taxonomy(
+        'amazon_cat',
+        'amazon',
+        array(
+            'hierarchical' => true,
+            'update_count_callback' => '_update_post_term_count',
+            'label' => 'amazonのカテゴリー',
+            'singular_label' => 'amazonのカテゴリー',
+            'public' => true,
+            'show_ui' => true
+        )
+    );
+}

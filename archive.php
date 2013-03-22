@@ -25,21 +25,7 @@
                     </div>
 
                     <div class="sidebar span3">
-                        <div class="well">
-                            <div class="book"></div>
-                        </div>
-                        <div class="well">
-                            <div class="book"></div>
-                        </div>
-                        <div class="well">
-                            <div class="book"></div>
-                        </div>
-                        <div class="well">
-                            <div class="book"></div>
-                        </div>
-                        <div class="well">
-                            <div class="book"></div>
-                        </div>
+                        <?php get_sidebar('archive'); ?>
                     </div>
                 </div>
             </div>
