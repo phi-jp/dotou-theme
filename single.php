@@ -49,7 +49,18 @@
                                     <?php the_content(); ?>
                                 </div>
                                 <div class="tab-pane" id="tab2">あああああああああああ</div>
-                                <div class="tab-pane" id="tab3">いいいいいいいいいい</div>
+                                <div class="tab-pane clearfix" id="tab3">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Last Update:</th>
+                                            <td><?php the_modified_date(); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Push:</th>
+                                            <td><?php the_date( ); ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                         <?php endwhile; endif; ?>
