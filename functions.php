@@ -1,4 +1,5 @@
 <?php
+// コメントの表示をカスタマイズ
 function custom_comments_list($comment, $args, $depth){
 $GLOBALS['comment'] = $comment; ?>
 <li <?php comment_class('comment-body'); ?>>
@@ -16,9 +17,9 @@ $GLOBALS['comment'] = $comment; ?>
         </div>
     </div>
 </div>
-
 <?php }
 
+// コメントの入力フォームをカスタマイズ
 function user_comment_form( $args = array(), $post_id = null ) {
     global $id;
 
@@ -102,7 +103,7 @@ function user_comment_form( $args = array(), $post_id = null ) {
     <?php
 }
 
-
+/* jsdo.it */
 function get_jsdoit_id($post_id = null) {
     if ( null === $post_id ) $post_id = $id;
     else $id = $post_id;
