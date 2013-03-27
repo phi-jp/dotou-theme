@@ -1,0 +1,54 @@
+/*
+ * style.less
+ */
+
+@import "tmlib.less";
+@import "reset.less";
+@import "variables.less";
+
+
+
+/*
+ * main column
+ */
+.page{
+  .container{
+    h1{
+      font-weight: normal;
+      #tm .font-size(35);
+    }
+    h2{
+      #tm .font-size(22);
+    }
+    h3{
+      #tm .font-size(18);
+    }
+    .page-header{
+      margin: 20px 0;
+      h1{
+        margin: 0;
+      }
+    }
+    p{
+      margin-bottom: 20px;
+    }
+  }
+
+  // 問い合わせ
+  .contact{
+    .container{
+      width: 480px;
+      margin-top: 30px;
+      form{
+        margin-bottom: 0;
+        input,
+        textarea{
+          width: 100%;
+        }
+        input[type="text"]{
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+}
