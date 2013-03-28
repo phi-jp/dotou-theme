@@ -40,16 +40,44 @@
                         </div>
                         <div class="tabbable">
                             <ul class="nav nav-tabs">
-                                <li class="active"><a href="#tab1" data-toggle="tab">助言</a></li>
-                                <li><a href="#tab2" data-toggle="tab">差分</a></li>
-                                <li><a href="#tab3" data-toggle="tab">更新日</a></li>
+                                <?php
+                                $active = "active";
+                                $this_cat = get_the_category($cat); $this_cat = $this_cat[0];
+                                if($this_cat->cat_name === "鍛練"){
+                                    echo '<li class="'.$active.'"><a href="#tab1" data-toggle="tab">問い</a></li>';
+                                    $active = "";
+                                }
+                                ?>
+                                <li class="<?php echo $active; ?>"><a href="#tab2" data-toggle="tab">助言</a></li>
+                                <li><a href="#tab3" data-toggle="tab">差分</a></li>
+                                <li><a href="#tab4" data-toggle="tab">更新日</a></li>
                             </ul>
                             <div class="tab-content">
-                                <div class="tab-pane active" id="tab1">
+                                <?php
+                                $active = "active";
+                                if($this_cat->cat_name === "鍛練"){
+                                    echo '<div class="tab-pane '.$active.'" id="tab1">';
+                                    the_field('TanrenQuestion',$post->ID);
+                                    echo '</div>';
+                                    $active = "";
+                                }
+                                ?>
+                                <div class="tab-pane <?php echo $active; ?>" id="tab2">
                                     <?php the_content(); ?>
                                 </div>
-                                <div class="tab-pane" id="tab2">あああああああああああ</div>
-                                <div class="tab-pane" id="tab3">いいいいいいいいいい</div>
+                                <div class="tab-pane" id="tab3">あああああああああああ</div>
+                                <div class="tab-pane clearfix" id="tab4">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Last Update:</th>
+                                            <td><?php the_modified_date(); ?></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Push:</th>
+                                            <td><?php the_date( ); ?></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                         <?php endwhile; endif; ?>

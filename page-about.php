@@ -4,62 +4,76 @@
     <head>
         <?php get_template_part('head'); ?>
     </head>
-    
-    <body>
+
+    <body <?php body_class($body_class); ?>>
         <?php get_header(); ?>
 
 		<div id="wrap">
-	        <div class="container">
-				<div class="hero-unit">
-					<h1>怒濤 <small>~ 世界一のサンプル数 ~</small></h1>
-					<br>
+        <div class="container">
+        		<div class="row">
+	              <div class="sidebar span3">
+	                  <?php get_sidebar('page'); ?>
+	              </div>
+                <div class="content span8 offset1">
+				        		<div class="page-header">
+				                <h1><?php the_title(); ?></h1>
+				            </div>
 
-					<div class="row">
-						<div class="span3">
-							<img alt="screenshot" src="logo.png" width=400px height=400px>
-						</div>
-						<div class="span6">
-							<p>
-								怒濤とは世界一のサンプル数を誇るサービスです. dummy dummy dummy dummy dummy dummy dummy dummy 
-							</p>
-							<p>
-								<a class="btn btn-primary btn-large" href="#" target="">
-									始めよう »
-								</a>
-							</p>
-						</div>
-					</div>
-				</div>
+				        		<h2>怒濤とは</h2>
+				        		<p>
+				        			ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br />
+				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
+				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
+				        		</p>
 
-				<div class="row-fluid detail-block">
-					<section class="span4">
-						<h2>修練でコードを見る</h2>
-						<p class="description">
-						修練はサンプルのコードを載せています。
-						</p>
-						<p><a class="btn" href="#">詳細 »</a></p>
-					</section>
-					<section class="span4">
-						<h2>鍛錬でコードを書く</h2>
-						<p class="description">
-						jsdo.itで実際にコードを書いてみよう。<br />
-						うまく動かない場合は修練のサンプルで確認してみよう。
-						</p>
-						<p><a class="btn" href="#">詳細 »</a></p>
-					</section>
-					<section class="span4">
-						<h2>熟練でレベルアップ</h2>
-						<p class="description">
-						熟練では基礎を終えた人向けに一歩進んだ内容を紹介しています。<br />
-						</p>
-						<p><a class="btn" href="#">詳細 »</a></p>
-					</section>
-				</div>
-	        </div>
+				        		<h2>怒濤の狙い</h2>
+				        		<p>
+				        			ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br />
+				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
+				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
+				        		</p>
+
+				        		<h2>jsdo.it</h2>
+				        		<p>
+				        			ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br />
+				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
+				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
+				        		</p>
+
+				        		<h2>Member</h2>
+				        		<div class="member-list">
+				        				<ul class="row">
+					        					<li class="span4 clearfix">
+					        							<img class="img-polaroid pull-left" src="http://dummyimage.com/128.png/aaa/666" alt="" width="128" height="128">
+					        							<div class="member-info pull-left">
+					        									<h3>name</h3>
+					        									<h4>post</h4>
+					        									<p class="member-text">
+					        										aaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaa
+					        									</p>
+					        							</div>
+					        					</li>
+					        					<li class="span4 clearfix">
+					        							<img class="img-polaroid pull-left" src="http://dummyimage.com/128.png/aaa/666" alt="" width="128" height="128">
+					        							<div class="member-info pull-left">
+					        									<h3>name</h3>
+					        									<h4>post</h4>
+					        									<p class="member-text">
+					        										aaaaaaaaa<br />
+					        										aaaaaaaaa<br />
+					        										aaaaaaaaa
+					        									</p>
+					        							</div>
+					        					</li>
+				        				</ul>
+				        		</div>
+				        </div>
+            </div>
         </div>
-        
-        <?php get_footer(); ?>
-        
-        <?php wp_footer(); ?>
+    </div>
+
+    <?php get_footer(); ?>
+
+    <?php wp_footer(); ?>
     </body>
 </html>
