@@ -41,11 +41,32 @@
 				        		</p>
 
 				        		<h2>Member</h2>
-				        		<p>
-				        			ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー<br />
-				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
-				        			サンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプルサンプル<br />
-				        		</p>
+				        		<div class="member-list">
+				        				<ul class="row">
+					        					<li class="span4 clearfix">
+					        							<img class="img-polaroid pull-left" src="http://dummyimage.com/128.png/aaa/666" alt="" width="128" height="128">
+					        							<div class="member-info pull-left">
+					        									<h3>name</h3>
+					        									<h4>post</h4>
+					        									<p class="member-text">
+					        										aaaaaaaaaaa aaaaaaaaaaaaaaa aaaaaaaaaa
+					        									</p>
+					        							</div>
+					        					</li>
+					        					<li class="span4 clearfix">
+					        							<img class="img-polaroid pull-left" src="http://dummyimage.com/128.png/aaa/666" alt="" width="128" height="128">
+					        							<div class="member-info pull-left">
+					        									<h3>name</h3>
+					        									<h4>post</h4>
+					        									<p class="member-text">
+					        										aaaaaaaaa<br />
+					        										aaaaaaaaa<br />
+					        										aaaaaaaaa
+					        									</p>
+					        							</div>
+					        					</li>
+				        				</ul>
+				        		</div>
 				        </div>
             </div>
         </div>
