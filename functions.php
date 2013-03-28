@@ -291,6 +291,10 @@ add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 180, 180, true );
 
 
+// カスタムメニューを追加
+add_theme_support( 'menus' );
+
+
 /* カスタム投稿タイプを追加 */
 add_action( 'init', 'create_post_type' );
 function create_post_type() {
