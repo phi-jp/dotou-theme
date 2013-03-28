@@ -1,0 +1,95 @@
+/*
+ * style.less
+ */
+
+@import "tmlib.less";
+@import "reset.less";
+@import "variables.less";
+
+
+
+/*
+ * main column
+ */
+.page{
+  .content{
+    h1{
+      font-weight: normal;
+      #tm .font-size(35);
+    }
+    h2{
+      #tm .font-size(22);
+    }
+    h3{
+      #tm .font-size(18);
+    }
+    p{
+      margin-bottom: 20px;
+    }
+    .page-header{
+      margin: 20px 0;
+      h1{
+        margin: 0;
+      }
+    }
+    .member-list{
+      ul{
+        li{
+          list-style: none;
+          img{
+            margin-right: 20px;
+          }
+          .member-info{
+            width: 128px;
+            h3{
+              #tm .font-size(18);
+              color: rgb(240, 186, 50);
+              line-height: 1;
+            }
+            h4{
+              #tm .font-size(16);
+              color: rgb(246, 213, 128);
+              line-height: 1;
+              font-weight: normal;
+            }
+            .member-text{
+              color: #999;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  // 問い合わせ
+  .contact{
+    .content{
+      width: 480px;
+      margin-top: 25px;
+      form{
+        margin-bottom: 0;
+        input,
+        textarea{
+          width: 100%;
+        }
+        input[type="text"]{
+          padding: 15px 0;
+        }
+      }
+    }
+  }
+
+  // サイドバー
+  .sidebar{
+    margin-top: 25px;
+    ul{
+      #tm .font-size(16);
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+        margin: 15px 0;
+      }
+    }
+  }
+}

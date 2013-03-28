@@ -25,6 +25,9 @@
 if(is_single()){
   echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/single.less" />';
 }
+else if(is_page()){
+  echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/page.less" />';
+}
 else if(is_archive()){
   echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/archive.less" />';
 }
