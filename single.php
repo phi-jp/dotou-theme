@@ -57,13 +57,13 @@
                                 $active = "active";
                                 if($this_cat->cat_name === "鍛練"){
                                     echo '<div class="tab-pane '.$active.'" id="tab1">';
-                                    the_field('TanrenQuestion',$post->ID);
+                                    the_field('TanrenQuestion', $post->ID);
                                     echo '</div>';
                                     $active = "";
                                 }
                                 ?>
                                 <div class="tab-pane <?php echo $active; ?>" id="tab2">
-                                    <?php the_content(); ?>
+                                    <?php the_field('Advice', $post->ID); ?>
                                 </div>
                                 <div class="tab-pane" id="tab3">あああああああああああ</div>
                                 <div class="tab-pane clearfix" id="tab4">
