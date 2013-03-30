@@ -17,6 +17,7 @@ endwhile; wp_reset_query();
 
 foreach ($amazonData as $key => $value) { ?>
     <div class="well">
+        <h2><?php echo $value["title"]; ?></h2>
         <div class="book">
             <a href="<?php echo $value["link"]; ?>" title="<?php echo $value["title"]; ?>"><img src="<?php echo $value["image"][0]; ?>" width="<?php echo $value["image"][1]; ?>" height="<?php echo $value["image"][2]; ?>" alt="<?php echo $value["title"]; ?>"></a>
         </div>

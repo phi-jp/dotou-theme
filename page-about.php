@@ -70,6 +70,7 @@
 				        </div>
             </div>
         </div>
+        <div id="footer-padding"></div>
     </div>
 
     <?php get_footer(); ?>
