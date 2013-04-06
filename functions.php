@@ -233,6 +233,40 @@ function getSortChapterNumber($post_data){
 }
 
 
+// 全カテゴリを取得
+function getAllCategory(){
+    return get_terms( "category", "fields=all&get=all&orderby=id" );
+}
+
+// 親カテゴリを取得
+function getParentCategory(){
+    $all_category = getAllCategory();
+    $tmp = array();
+    foreach ($all_category as $key => $value) {
+        if($value->parent === "0"){
+            if($value->name != "Other"){
+                array_push($tmp, $value);
+            }
+        }
+    }
+
+    return $tmp;
+}
+// 子カテゴリを取得
+function getChildrenCategory(){
+    $all_category = getAllCategory();
+    $tmp = array();
+    foreach ($all_category as $key => $value) {
+      if($value->parent != "0"){
+            $slice_cat = explode("-", $value->slug);
+            $tmp[$slice_cat[0]][$value->name] = $value;
+      }
+    }
+
+    return $tmp;
+}
+
+
 /*
  * テーマオプション
  */
