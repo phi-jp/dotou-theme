@@ -13,6 +13,20 @@
                     <li class="divider-vertical"></li>
                     <li><a href="<?php echo home_url(); ?>/about">About</a></li>
                     <li><a href="<?php echo home_url(); ?>/contact">Contact</a></li>
+                    <li><a href="<?php echo home_url(); ?>/list">List</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        <?php
+                        $list = get_categories();
+                        foreach ($list as $key => $value) {
+                            if($value->parent === "0"){
+                                echo '<li><a href="'.get_bloginfo('home').'/'.$value->slug.'/'.$value->slug.'-shuren" title="'.$value->cat_name.''.$value->cat_name.'">'.$value->cat_name.'</a></li>';
+                            }
+                        }
+                        ?>
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
