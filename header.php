@@ -18,10 +18,10 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         <?php
-                        $list = get_categories();
+                        $list = getParentCategory();
                         foreach ($list as $key => $value) {
                             if($value->parent === "0"){
-                                echo '<li><a href="'.get_bloginfo('home').'/'.$value->slug.'/'.$value->slug.'-shuren" title="'.$value->cat_name.''.$value->cat_name.'">'.$value->cat_name.'</a></li>';
+                                echo '<li><a href="'.get_bloginfo('home').'/'.$value->slug.'/" title="'.$value->cat_name.''.$value->cat_name.'">'.$value->name.'</a></li>';
                             }
                         }
                         ?>
