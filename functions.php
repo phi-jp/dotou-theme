@@ -319,6 +319,46 @@ function getLanguageChapter($language, $num){
     return $list[$num];
 }
 
+// 指定したテーマオプションを取得
+function getThemeOptions($val){
+    $key_name = getThemeOptionsKeyName();
+    $options = get_option( 'dotou_theme_options' );
+    return explode( "\n", $options[$key_name.$val] );
+}
+
+// 指定した言語のチャプターのリストを取得
+function getLanguageChapterList($val){
+    $options = getThemeOptions($val);
+    $list = array();
+    foreach ($options as $key => $value) {
+        $tmp = explode( ", ", $value );
+        array_push($list, $tmp[0]);
+    }
+    return $list;
+}
+
+// 指定した言語のスラッグのリストを取得
+function getLanguageSlugList($val){
+    $options = getThemeOptions($val);
+    $list = array();
+    foreach ($options as $key => $value) {
+        $tmp = explode( ", ", $value );
+        array_push($list, $tmp[1]);
+    }
+    return $list;
+}
+
+// 指定した言語の章に記事があるか取得
+function hasChapterEntry($slug, $chapter_name, $chapter_slug){
+    $meta = "_".$slug[1]."_".trim($chapter_slug)."_章名";
+    $entry_list = getThemeOptions($meta);
+    if($entry_list[0]){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
 
 // アイキャッチを追加
 add_theme_support( 'post-thumbnails' );

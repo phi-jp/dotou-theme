@@ -1,12 +1,5 @@
 <?php
-$page_slug = $_SERVER["REQUEST_URI"];
-$page_slug = explode('/', $page_slug);
-$lang_list = getLanguageList();
-
-$lang_chapter = getThemeOptions("_".$page_slug[1]);
-$chapter_name = getLanguageChapterList("_".$page_slug[1]);
-$chapter_slug = getLanguageSlugList("_".$page_slug[1]);
-
+global $page_slug, $lang_list, $lang_chapter, $chapter_name, $chapter_slug;
 $url = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[0];
 
 // pr($url);
@@ -18,9 +11,7 @@ $url = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[0];
 
 $has_entry = false;
 foreach ($chapter_name as $key => $value) {
-    $meta = "_".$page_slug[1]."_".trim($chapter_slug[$key])."_章名";
-    $entry_list = getThemeOptions($meta);
-    if($entry_list[0]){
+    if(hasChapterEntry($page_slug, $value, $chapter_slug[$key])){
         $has_entry = true;
         $url = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[$key];
         break;
