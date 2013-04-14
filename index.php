@@ -19,11 +19,11 @@
 
                     $lang_list = getLanguageList();
 
-                    $lang_chapter = getThemeOptions("_".$page_slug[1]);
-                    $chapter_name = getLanguageChapterList("_".$page_slug[1]);
-                    $chapter_slug = getLanguageSlugList("_".$page_slug[1]);
+                    $lang_chapter = getThemeOptions($page_slug[1]);
+                    $chapter_name = getLanguageChapterList($page_slug[1]);
+                    $chapter_slug = getLanguageSlugList($page_slug[1]);
 
-                    $get_key = "_".$page_slug[1]."_".$page_slug[2]."_章名";
+                    $get_key = $page_slug[1]."_".$page_slug[2]."_章名";
 
                     $children_flag = getThemeOptions($get_key);
 
@@ -36,11 +36,6 @@
                     else if(is_404()){
                         get_template_part("404_not_found");
                     }
-
-
-
-                    $meta = getThemeOptionsKeyName()."_".$page_slug[1]."_".$page_slug[2];
-                    // pr($meta);
                     ?>
                     </div>
 

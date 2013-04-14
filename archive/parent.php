@@ -11,7 +11,7 @@ $url = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[0];
 
 $has_entry = false;
 foreach ($chapter_name as $key => $value) {
-    if(hasChapterEntry($page_slug, $value, $chapter_slug[$key])){
+    if(hasChapterEntry($page_slug[1], $value, $chapter_slug[$key])){
         $has_entry = true;
         $url = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[$key];
         break;
