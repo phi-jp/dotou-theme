@@ -282,7 +282,9 @@ function getThemeOptionsKeyName(){
 function getLanguageList(){
     $key_name = getThemeOptionsKeyName();
     $options = get_option( 'dotou_theme_options' );
-    return explode( "\n", $options[$key_name] );
+    $val = explode( "\n", $options[$key_name] );
+    $val = array_map('trim', $val);
+    return $val;
 }
 
 // 特定の言語を取得
@@ -293,24 +295,24 @@ function getLanguage($langage){
 
 // 言語のカテゴリを取得
 function getLanguageCategory(){
-    $options = get_option( 'dotou_theme_options' );
-    $category_list = array("_shuren", "_tanren", "_jukuren");
-    $category_name = array("修練", "鍛練", "熟練");
-    $list = getLanguageList();
-    $data = array();
-    foreach ($list as $key => $value) {
-        $value = trim($value);
-        $array_key = getThemeOptionsKeyName()."_".$value;
-        $tmp = array();
-        foreach ($category_list as $key2 => $value2) {
-            $chap = explode( "\n", $options[$array_key.$value2] );
-            $chap = preg_replace("/\r|\n/", "", $chap);
-            $tmp[$category_name[$key2]] = $chap;
-        }
-        $data[$value] = $tmp;
-    }
+    // $options = get_option( 'dotou_theme_options' );
+    // $category_list = array("_shuren", "_tanren", "_jukuren");
+    // $category_name = array("修練", "鍛練", "熟練");
+    // $list = getLanguageList();
+    // $data = array();
+    // foreach ($list as $key => $value) {
+    //     $value = trim($value);
+    //     $array_key = getThemeOptionsKeyName()."_".$value;
+    //     $tmp = array();
+    //     foreach ($category_list as $key2 => $value2) {
+    //         $chap = explode( "\n", $options[$array_key.$value2] );
+    //         $chap = preg_replace("/\r|\n/", "", $chap);
+    //         $tmp[$category_name[$key2]] = $chap;
+    //     }
+    //     $data[$value] = $tmp;
+    // }
 
-    return $data;
+    // return $data;
 }
 
 // 言語の章を取得
@@ -319,6 +321,68 @@ function getLanguageChapter($language, $num){
     return $list[$num];
 }
 
+
+
+// 指定したテーマオプションを取得
+function getThemeOptions($val){
+    $key_name = getThemeOptionsKeyName();
+    $options = get_option( 'dotou_theme_options' );
+
+    $list = explode( "\n", $options[$key_name."_".$val] );
+    $list = array_map('trim', $list);
+    return $list;
+}
+
+// 指定した言語のチャプターのリストを取得
+function getLanguageChapterList($val){
+    $options = getThemeOptions($val);
+    $list = array();
+    foreach ($options as $key => $value) {
+        $tmp = explode( ", ", $value );
+        array_push($list, $tmp[0]);
+    }
+    return $list;
+}
+
+// 指定した言語のスラッグのリストを取得
+function getLanguageSlugList($val){
+    $options = getThemeOptions($val);
+    $list = array();
+    foreach ($options as $key => $value) {
+        $tmp = explode( ", ", $value );
+        array_push($list, $tmp[1]);
+    }
+    return $list;
+}
+
+// 指定した言語の章に記事があるか取得
+// slug:            言語のスラッグ
+// chapter_slug:    章のスラッグ
+function hasChapterEntry($slug, $chapter_slug){
+    $meta = $slug."_".trim($chapter_slug)."_章名";
+    $entry_list = getThemeOptions($meta);
+    if($entry_list[0]){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+
+// 指定した章の記事数を取得
+function getEntryCount($lang, $chapter){
+    $meta = $lang."_".$chapter."_章名";
+    $list = getThemeOptions($meta);
+
+    $count = 0;
+    foreach ($list as $key => $value) {
+        $meta = $lang."_".$chapter."_".$value;
+        $tmp = getThemeOptions($meta);
+        $count += count($tmp);
+    }
+
+    return $count;
+}
 
 // アイキャッチを追加
 add_theme_support( 'post-thumbnails' );
