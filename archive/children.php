@@ -7,14 +7,13 @@ global $page_slug, $lang_list, $lang_chapter, $chapter_name, $chapter_slug;
 // pr($chapter_slug);
 
 // チャプターを取得
-$meta = "_".$page_slug[1]."_".$page_slug[2]."_章名";
+$meta = $page_slug[1]."_".$page_slug[2]."_章名";
 $lang_chapter = getThemeOptions($meta);
-// pr($lang_chapter);
 
 // 言語名をセット
 $parent_name = "";
 foreach ($lang_list as $key => $value) {
-  $tmp = trim(strtolower(str_replace(" ", "", $value)));
+  $tmp = strtolower(str_replace(" ", "", $value));
   if($tmp === $page_slug[1]){ $parent_name = $value; }
 }
 ?>
@@ -25,10 +24,10 @@ foreach ($lang_list as $key => $value) {
     <ul class="nav nav-pills">
     <?php
     foreach ($chapter_name as $key => $value) {
-        if(hasChapterEntry($page_slug, $value, $chapter_slug[$key])){
+        if(hasChapterEntry($page_slug[1], $chapter_slug[$key])){
             $active = "";
             $link = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[$key];
-            if( $page_slug[2] === trim($chapter_slug[$key]) ){ $active = "active"; }
+            if( $page_slug[2] === $chapter_slug[$key] ){ $active = "active"; }
             echo '<li class="'.$active.'"><a href="'.$link.'">'.$value.'</a></li>';
         }
     }
@@ -41,7 +40,7 @@ foreach ($lang_list as $key => $value) {
     <?php
     foreach ($lang_chapter as $key => $value) {
         echo '<h2>'.$value.'</h2>';
-        $meta = "_".$page_slug[1]."_".$page_slug[2]."_".trim($value);
+        $meta = $page_slug[1]."_".$page_slug[2]."_".$value;
         $entry_list = getThemeOptions($meta);
         echo '<ol>';
         if($entry_list[0]){

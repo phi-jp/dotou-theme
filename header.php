@@ -18,10 +18,18 @@
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#"><b class="caret"></b></a>
                         <ul class="dropdown-menu">
                         <?php
-                        $list = getParentCategory();
+                        $list = getLanguageList();
                         foreach ($list as $key => $value) {
-                            if($value->parent === "0"){
-                                echo '<li><a href="'.get_bloginfo('home').'/'.$value->slug.'/" title="'.$value->cat_name.''.$value->cat_name.'">'.$value->name.'</a></li>';
+                            $lang_name  = strtolower(str_replace(" ", "", $value));
+                            $lang_chapter = getThemeOptions($lang_name);
+                            $chapter_slug = getLanguageSlugList($lang_name);
+
+                            foreach ($lang_chapter as $key2 => $value2) {
+                                if(hasChapterEntry($lang_name, $chapter_slug[$key2])){
+                                    $url = get_bloginfo("url")."/".$lang_name."/";
+                                    echo '<li><a href="'.$url.'">'.$value.'</a></li>';
+                                    break;
+                                }
                             }
                         }
                         ?>
