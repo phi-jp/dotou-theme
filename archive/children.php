@@ -24,7 +24,7 @@ foreach ($lang_list as $key => $value) {
     <ul class="nav nav-pills">
     <?php
     foreach ($chapter_name as $key => $value) {
-        if(hasChapterEntry($page_slug[1], $value, $chapter_slug[$key])){
+        if(hasChapterEntry($page_slug[1], $chapter_slug[$key])){
             $active = "";
             $link = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[$key];
             if( $page_slug[2] === $chapter_slug[$key] ){ $active = "active"; }

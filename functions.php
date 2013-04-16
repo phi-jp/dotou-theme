@@ -356,7 +356,9 @@ function getLanguageSlugList($val){
 }
 
 // 指定した言語の章に記事があるか取得
-function hasChapterEntry($slug, $chapter_name, $chapter_slug){
+// slug:            言語のスラッグ
+// chapter_slug:    章のスラッグ
+function hasChapterEntry($slug, $chapter_slug){
     $meta = $slug."_".trim($chapter_slug)."_章名";
     $entry_list = getThemeOptions($meta);
     if($entry_list[0]){

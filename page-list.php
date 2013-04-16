@@ -24,7 +24,7 @@
                     $has_entry = false;
                     $tmp = array();
                     foreach ($lang_chapter as $key2 => $value2) {
-                        if(hasChapterEntry($lang_name, $value, $chapter_slug[$key2])){
+                        if(hasChapterEntry($lang_name, $chapter_slug[$key2])){
                             $has_entry = true;
                             array_push($tmp, $value2);
                         }

@@ -25,7 +25,7 @@
                             $chapter_slug = getLanguageSlugList($lang_name);
 
                             foreach ($lang_chapter as $key2 => $value2) {
-                                if(hasChapterEntry($lang_name, $value, $chapter_slug[$key2])){
+                                if(hasChapterEntry($lang_name, $chapter_slug[$key2])){
                                     $url = get_bloginfo("url")."/".$lang_name."/";
                                     echo '<li><a href="'.$url.'">'.$value.'</a></li>';
                                     break;
