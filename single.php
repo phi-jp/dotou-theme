@@ -14,8 +14,18 @@
                     <div class="content span9">
                         <?php
                         if(have_posts()): while(have_posts()):the_post(); ?>
-                        <div class="page-header">
-                            <h1><?php the_title(); ?></h1>
+                        <div class="page-header clearfix">
+                            <h1 class="pull-left">
+                                <?php
+                                the_title();
+                                ?>
+                            </h1>
+                            <?php
+                            if ( is_user_logged_in() ) {
+                                $edit_url = 'http://halt.lugn-design.com/wp-admin/post.php?post='.$post->ID.'&action=edit';
+                                echo '<a class="pull-right btn" href="'.$edit_url.'">edit</a>';
+                            }
+                            ?>
                         </div>
                         <div class="meta-box row">
                             <div class="category span3">
