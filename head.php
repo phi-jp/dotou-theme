@@ -28,7 +28,7 @@ if(is_single()){
 else if(is_page()){
   echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/page.less" />';
 }
-else if(is_archive()){
+else if(is_archive() || is_404()){
   echo '<link rel="stylesheet/less" type="text/css" href="'.get_bloginfo('template_url').'/less/archive.less" />';
 }
 ?>
