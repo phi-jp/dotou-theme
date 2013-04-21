@@ -33,7 +33,6 @@ else if(is_archive() || is_404()){
 }
 ?>
 
-<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 <script>
     // TODO: Javascript
 </script>
@@ -59,6 +58,8 @@ else if(is_archive() || is_404()){
 <!-- SocialCount -->
 <script src="<?php bloginfo('template_url'); ?>/lib/SocialCount/socialcount.js"></script>
 <!-- SocialCount -->
+
+<script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
 
 <!--[if IE]>
 <style>
