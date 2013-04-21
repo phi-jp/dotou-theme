@@ -46,7 +46,7 @@ foreach ($lang_chapter as $key => $value) {
                 echo '<li class="nav-header">'.$value.'</li>';
                 foreach ($entry_list as $key2 => $value2) {
                     $entry = explode(", ", $value2);
-                    echo '<li><a href="'.$entry[1].'">'.$entry[0].'</a></li>';
+                    echo '<li><a href="'.strtolower(str_replace(" ", "", $entry[1])).'">'.$entry[0].'</a></li>';
                 }
             }
             else{

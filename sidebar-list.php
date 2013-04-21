@@ -8,7 +8,7 @@
             echo '<ul>';
             foreach ($value as $key2 => $value2) {
                 $meta = explode(", ", $value2);
-                $url = get_bloginfo("url")."/".$key."/".$meta[1];
+                $url = get_bloginfo("url")."/".strtolower(str_replace(" ", "", $key))."/".$meta[1];
                 echo '<li><a href="'.$url.'">'.$meta[0].'</a></li>';
             }
             echo '</ul></li>';

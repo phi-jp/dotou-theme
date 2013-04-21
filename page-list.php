@@ -49,7 +49,7 @@
                                 <?php
                                 foreach ($value as $key2 => $value2) {
                                     $meta = explode(", ", $value2);
-                                    $url = get_bloginfo("url")."/".$key."/".$meta[1];
+                                    $url = get_bloginfo("url")."/".strtolower(str_replace(" ", "", $key))."/".$meta[1];
                                     $description = explode(", ", $lang_chapter[$key2]);
                                     $description = $description[2];
                                     $count = getEntryCount($key, $meta[1]);

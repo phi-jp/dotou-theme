@@ -23,20 +23,6 @@ function theme_head(){
     ?>
     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/lib/bootstrap/admin_css/bootstrap.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.1/bootstrap.min.js"></script>
-    <script type="text/javascript">
-    jQuery(function() {
-        // showTab(0);
-        // var tab = jQuery(".nav-tabs li");
-        // tab.click(function(){
-        //     showTab( jQuery(this).index() );
-        // });
-
-        // function showTab(num){
-        //     jQuery(".tab-pane").hide();
-        //     jQuery(".tab-pane").eq(num).show();
-        // }
-    });
-    </script>
     <?php
 }
 
