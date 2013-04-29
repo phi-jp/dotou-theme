@@ -156,7 +156,7 @@ function theme_options_do_page() {
                                                 <tbody>
                                                     <tr valign="top">
                                                         <td>
-                                                            <?php $get_key = $key_name."_".strtolower($value)."_".$chapter_slug."_".$value3; ?>
+                                                            <?php $get_key = $key_name."_".strtolower(str_replace(" ", "", $value))."_".$chapter_slug."_".$value3; ?>
                                                             <textarea id="dotou_theme_options[<?php echo $get_key; ?>]" class="large-text" cols="50" rows="10" name="dotou_theme_options[<?php echo $get_key; ?>]"><?php echo esc_textarea( $options[$get_key] ); ?></textarea>
                                                         </td>
                                                     </tr>
