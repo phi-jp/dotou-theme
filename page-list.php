@@ -50,11 +50,10 @@
                                 foreach ($value as $key2 => $value2) {
                                     $meta = explode(", ", $value2);
                                     $url = get_bloginfo("url")."/".strtolower(str_replace(" ", "", $key))."/".$meta[1];
-                                    $description = explode(", ", $lang_chapter[$key2]);
+                                    $description = explode(", ", $value2);
                                     $description = $description[2];
                                     $count = getEntryCount($key, $meta[1]);
                                     $img_url = "http://dummyimage.com/128.png/aaa/666&text=".str_replace(" ", "_", $key);
-
                                     ?>
                                     <li class="span2 <?php echo $offset; ?> clearfix">
                                         <a href="<?php echo $url; ?>"><img class="img-polaroid pull-left" src="<?php echo $img_url; ?>" alt="" width="128" height="128"></a>
