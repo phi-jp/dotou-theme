@@ -101,6 +101,7 @@ function theme_options_do_page() {
                         <div class="tab-pane" id="tab<?php echo $key+2; ?>">
                             <?php
                             $lang_name = str_replace(".", "", $value);
+                            $lang_name = strtolower(str_replace(" ", "", $lang_name));
                             $get_key = $key_name.'_'.strtolower(str_replace(" ", "", $value));
                             $category_list = getLanguageData($get_key);
                             ?>
