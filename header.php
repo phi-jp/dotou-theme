@@ -20,7 +20,7 @@
                         <?php
                         $list = getLanguageList();
                         foreach ($list as $key => $value) {
-                            $lang_name  = strtolower(str_replace(" ", "", $value));
+                            $lang_name  = trimString($value);
                             $lang_chapter = getThemeOptions($lang_name);
                             $chapter_slug = getLanguageSlugList($lang_name);
 

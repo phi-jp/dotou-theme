@@ -9,13 +9,6 @@ $chapter_slug = getLanguageSlugList($page_slug[1]);
 
 $url = get_bloginfo('home')."/".$page_slug[1]."/".$chapter_slug[0];
 
-// pr($url);
-// pr($page_slug);
-// pr($lang_list);
-// pr($lang_chapter);
-// pr($chapter_name);
-// pr($chapter_slug);
-
 $has_entry = false;
 foreach ($chapter_name as $key => $value) {
     $meta = $page_slug[1]."_".trim($chapter_slug[$key])."_章名";
@@ -28,8 +21,10 @@ foreach ($chapter_name as $key => $value) {
 }
 
 if($has_entry){
-    header("Location: ". $url);
-    exit;
+    if($_SERVER["HTTP_HOST"] != "dotou.net"){
+        header("Location: ". $url);
+        exit;
+    }
     ?>
     <script type="text/javascript">
       function reDirect(){
