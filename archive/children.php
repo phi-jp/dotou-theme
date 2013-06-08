@@ -1,10 +1,5 @@
 <?php
 global $page_slug, $lang_list, $lang_chapter, $chapter_name, $chapter_slug;
-// pr($page_slug);
-// pr($lang_list);
-// pr($lang_chapter);
-// pr($chapter_name);
-// pr($chapter_slug);
 
 // チャプターを取得
 $meta = $page_slug[1]."_".$page_slug[2]."_章名";
@@ -13,7 +8,7 @@ $lang_chapter = getThemeOptions($meta);
 // 言語名をセット
 $parent_name = "";
 foreach ($lang_list as $key => $value) {
-  $tmp = strtolower(str_replace(" ", "", $value));
+  $tmp = trimString($value);
   if($tmp === $page_slug[1]){ $parent_name = $value; }
 }
 ?>

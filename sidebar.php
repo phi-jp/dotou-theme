@@ -14,6 +14,7 @@ foreach ($lang_chapter as $key => $value) {
     $tmp = explode(", ", $value);
     $meta = $page_slug[1]."_".$tmp[1]."_章名";
     $chapter_list = getThemeOptions($meta);
+
     if( $chapter_list[0] ){
         foreach ($chapter_list as $key2 => $value2) {
             $meta = $page_slug[1]."_".$tmp[1]."_".$value2;
@@ -46,7 +47,7 @@ foreach ($lang_chapter as $key => $value) {
                 echo '<li class="nav-header">'.$value.'</li>';
                 foreach ($entry_list as $key2 => $value2) {
                     $entry = explode(", ", $value2);
-                    echo '<li><a href="'.$entry[1].'">'.$entry[0].'</a></li>';
+                    echo '<li><a href="'.trimString($entry[1]).'">'.$entry[0].'</a></li>';
                 }
             }
             else{
