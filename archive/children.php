@@ -8,7 +8,7 @@ $lang_chapter = getThemeOptions($meta);
 // 言語名をセット
 $parent_name = "";
 foreach ($lang_list as $key => $value) {
-  $tmp = strtolower(str_replace(" ", "", $value));
+  $tmp = trimString($value);
   if($tmp === $page_slug[1]){ $parent_name = $value; }
 }
 ?>

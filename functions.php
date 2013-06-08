@@ -176,6 +176,26 @@ function pr($val){
     print_r($val);
     echo "</pre>";
 }
+// 記事のカテゴリなどをテーマオプション用に変換
+function trimString($str){
+    $val = $str;
+    while(1){
+        if (preg_match("/(\.)/", $val)) {
+           $val = str_replace(".", "-", $val);
+        }
+        else if (preg_match("/(\s)/", $val)) {
+           $val = str_replace(" ", "-", $val);
+        }
+        else if (preg_match("/(\n)/", $val)) {
+           $val = str_replace("\n", "", $val);
+        }
+        else{
+            break;
+        }
+    }
+
+    return strtolower($val);
+}
 
 
 // 特定カテゴリの記事を取得

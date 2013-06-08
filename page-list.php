@@ -15,8 +15,7 @@
                 $lang_list = getLanguageList();
                 $entry_list = array();
                 foreach ($lang_list as $key => $value) {
-
-                    $lang_name  = strtolower(str_replace(" ", "", $value));
+                    $lang_name = trimString($value);
                     $lang_chapter = getThemeOptions($lang_name);
                     $chapter_name = getLanguageChapterList($lang_name);
                     $chapter_slug = getLanguageSlugList($lang_name);
@@ -42,17 +41,17 @@
 
                     <?php
                     foreach ($entry_list as $key => $value) {
-                        echo '<h2 id="'.strtolower(str_replace(" ", "", $key)).'">'.$key.'</h2>';
+                        echo '<h2 id="'.trimString($key).'">'.$key.'</h2>';
                         ?>
                         <div class="language-list">
                             <ul class="row">
                                 <?php
                                 foreach ($value as $key2 => $value2) {
                                     $meta = explode(", ", $value2);
-                                    $url = get_bloginfo("url")."/".strtolower(str_replace(" ", "", $key))."/".$meta[1];
+                                    $url = get_bloginfo("url")."/".trimString($key)."/".$meta[1];
                                     $description = explode(", ", $value2);
                                     $description = $description[2];
-                                    $count = getEntryCount($key, $meta[1]);
+                                    $count = getEntryCount(trimString($key), $meta[1]);
                                     $img_url = "http://dummyimage.com/128.png/aaa/666&text=".str_replace(" ", "_", $key);
                                     ?>
                                     <li class="span2 <?php echo $offset; ?> clearfix">
